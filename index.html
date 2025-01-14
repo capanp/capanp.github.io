@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Dot Background</title>
+    
+    <style>
+        body {
+            color: rgb(161, 160, 171);
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle, hsl(246, 18%, 15%) 10%, hsl(250, 24%, 9%) 10%) 0 0 / 20px 20px;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            font-size: 16px; line-height: 24px;
+        }
+
+        nav {
+            color: inherit;
+            display: flex;
+            justify-content: center;
+            background-color: hsl(250, 24%, 9%);
+            padding-top: 40px;
+        }
+
+        nav ul {
+            display: inherit;
+            column-gap: 32px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 700px;
+        }
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .content {
+            margin: 40px 0;
+        }
+
+        .main {
+            margin-left: auto; margin-right: auto;
+            max-width: 700px;
+            background-color: #121018;
+            border-color: hsl(246, 11%, 22%);
+            border-style: solid; border-width: 1px; border-radius: 12px;
+        }
+
+        .main-space {
+            border: none;
+            padding: 30px 40px 30px 40px;
+        }
+
+        .header{
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 50px;
+            margin: 0;
+        }
+
+        .content a svg path {
+            filter: brightness(1);
+            transition: filter 0.3s ease;
+        }
+
+        .content a:hover svg path {
+            filter: brightness(0.8);
+            transition: filter 0.3s ease;
+        }
+
+        .content a {
+            color: inherit;
+            font-size: 24px;
+            font-weight: bold;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content .fb {
+            margin-left: 32px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a style="color: white;" href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="main">
+            <div class="main-space">
+                <h1 class="header" style="color: white;">Çağan, Capano Pehlivano</h1>
+                <p>Merhaba, ben Çağan. Bu sitede genel olarak yaptığım projeleri paylaşıyorum, bunun yanı sıra yaptığım projelerle ilgili çeşitli araçlar ve kaynak kodları da bulabilirsin. </p>
+                <a class="gh" href="https://github.com/capan01" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <defs>
+                            <linearGradient id="grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: #492378; stop-opacity: 1" />
+                                <stop offset="100%" style="stop-color: #862191; stop-opacity: 1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#grad-1)" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                    </svg>
+                </a>
+                <a class="fb" href="https://www.facebook.com/capmayan/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <defs>
+                            <linearGradient id="grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: #2872fc; stop-opacity: 1" />
+                                <stop offset="100%" style="stop-color: #0d45ac; stop-opacity: 1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#grad-2)" d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>
+                </a>
+                <a class="fb" href="https://steamcommunity.com/id/capansj/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <defs>
+                            <linearGradient id="grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: #2b86b0; stop-opacity: 1" />
+                                <stop offset="50%" style="stop-color: #25467a; stop-opacity: 1" />
+                                <stop offset="100%" style="stop-color: #0c1d3d; stop-opacity: 1" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#grad-3)" d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.2 2.2 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.22 2.22 0 0 1-1.312-1.568L.33 10.333Z"/>
+                        <path fill="url(#grad-3)" d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
