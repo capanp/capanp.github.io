@@ -174,11 +174,10 @@
         }
 
         .svDetails .sname {
-            margin-bottom: 5px !important;
             font-weight: 700;
             font-size: 12px;
             line-height: 16px;
-            margin: 0;
+            margin: 0 0 5px 0;
         }
 
         .sinv {
@@ -252,6 +251,15 @@
             border-radius: 50%;
             background-color: #80848d;
         }
+
+        .time {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .timer {
+            margin: 0 0 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -305,6 +313,20 @@
                         <path fill="url(#grad-3)" d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"/>
                     </svg>
                 </a>
+                <div class="time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                    </svg>
+                    <p class="timer" id="clock">undefined</p>
+                </div>
+                <div class="time">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-music-note" viewBox="0 0 16 16">
+                        <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2"/>
+                        <path fill-rule="evenodd" d="M9 3v10H8V3z"/>
+                        <path d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5z"/>
+                      </svg>
+                      <p class="timer" id="clock">Son oynatılan, Haarper • Archon</p>
+                </div>
             </div>
         </div>
     </div>
@@ -323,13 +345,13 @@
             <div class="svDetails">
                 <p class="sname">BİR SUNUCUYA DAVET EDİLDİNİZ</p>
                 <div class="sStatus">
-                    <img class="sImg" src="https://cdn.discordapp.com/icons/586962324544553011/33f31f3084e2130abb7c74827822deb2.webp?size=64" alt="Girl in a jacket" width="50" height="50">
+                    <img class="sImg" src="https://cdn.discordapp.com/icons/586962324544553011/33f31f3084e2130abb7c74827822deb2.webp?size=64" alt="server" width="50" height="50">
                     <div class="svDetails">
                         <a class="sinv" href="https://discord.gg/ukzQuMB64g" target="_blank" >CordBots</a>
                         <div class="mStatus">
                             <div class="gMemberslist">
                                 <i class="online"></i>
-                                123 Çevrim içi
+                                12 Çevrim içi
                                 <i class="avaible"></i>
                                 123 üye
                             </div>
@@ -340,5 +362,7 @@
             </div>
         </div>
     </div>
+
+    <script src="timer.js"></script>
 </body>
 </html>
