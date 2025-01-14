@@ -7,9 +7,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Dot Background</title>
     
     <style>
@@ -20,6 +23,11 @@
             background: radial-gradient(circle, hsl(246, 18%, 15%) 10%, hsl(250, 24%, 9%) 10%) 0 0 / 20px 20px;
             font-family: 'Inter', 'Segoe UI', sans-serif;
             font-size: 16px; line-height: 24px;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: rgb(200, 200, 200);
         }
 
         nav {
@@ -46,6 +54,16 @@
             transition: background-color 0.3s;
         }
 
+        img {
+            border-radius: 50%;
+            margin: auto;
+        }
+
+        .sImg {
+            border-radius: 15px !important;
+            margin: auto;
+        }
+
         .content {
             margin: 40px 0;
         }
@@ -61,6 +79,16 @@
         .main-space {
             border: none;
             padding: 30px 40px 30px 40px;
+        }
+
+        .server {
+            padding: 16px 16px;
+            margin-right: 0 !important;
+        }
+
+        .user {
+            padding: 16px 16px;
+            margin: 0 !important;
         }
 
         .header{
@@ -91,6 +119,138 @@
 
         .content .fb {
             margin-left: 32px;
+        }
+
+        .discord-boxs {
+            display: flex;
+            margin-left: auto; margin-right: auto;
+            max-width: 700px;
+        }
+
+        .discord-boxs div {
+            background-color: hsl(246, 11%, 22%);
+            display: flex;
+            margin: 0 auto 0 auto;
+            max-width: 432px;
+            min-width: 160px;
+            border-radius: 4px;
+        }
+
+        .usernames {
+            display: block !important;
+            padding-left: 0 !important;
+        }
+
+        .usernames .hname {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            color: rgb(200, 200, 200);
+        }
+
+        .usernames .mname {
+            font-family: 'Open Sans', 'Segoe UI', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        .usernames p{
+            margin: 2px 0 0 10px !important;
+            font-family: 'Open Sans', 'Segoe UI', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        .svDetails {
+            display: block !important;
+            padding: 0 !important;
+        }
+
+        .sStatus {
+            padding: 0 !important;
+            display: flex !important;
+        }
+
+        .svDetails .sname {
+            margin-bottom: 5px !important;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 16px;
+            margin: 0;
+        }
+
+        .sinv {
+            margin-left: 10px;
+            color: rgb(200, 200, 200);
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 24px;
+        }
+
+        .sinv:hover{
+            text-decoration: underline;
+        }
+
+        .gMemberslist {
+            padding: 0;
+            margin: 0 !important;
+            
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        .mStatus {
+            padding: 0 !important;
+        }
+
+        .statusText {
+            font-family: 'Open Sans', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            margin: 0!important;
+        }
+
+        .inviteButton {
+            margin-left: 40px;
+            font-family: 'Open Sans', 'Segoe UI', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+            background-color: #23a55a;
+            border: none; border-radius: 3px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            padding: 2px 16px 2px 16px;
+        }
+        
+        .inviteButton:hover{
+            background-color: #216337;
+        }
+
+        .uieuie::marker {
+            margin: 0 !important;
+        }
+
+        .online {
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 2px;
+            width: 8px !important;height: 8px !important;
+            border-radius: 50%;
+            background-color: #31a55e;
+        }
+
+        .avaible {
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 2px;
+            width: 8px !important;height: 8px !important;
+            border-radius: 50%;
+            background-color: #80848d;
         }
     </style>
 </head>
@@ -145,6 +305,38 @@
                         <path fill="url(#grad-3)" d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"/>
                     </svg>
                 </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="discord-boxs">
+        <div class="user">
+            <img src="https://cdn.discordapp.com/avatars/524983207943340052/2821525dba025d6216db5fd0ffd38d80.png?size=64" alt="profile" width="50" height="50">
+            <div class="usernames">
+                <p class="hname">Çağan</p>
+                <p class="mname">capan.</p>
+                <p class="mname">524983207943340052</p>
+            </div>
+        </div>
+        <div class="server">
+            <div class="svDetails">
+                <p class="sname">BİR SUNUCUYA DAVET EDİLDİNİZ</p>
+                <div class="sStatus">
+                    <img class="sImg" src="https://cdn.discordapp.com/icons/586962324544553011/33f31f3084e2130abb7c74827822deb2.webp?size=64" alt="Girl in a jacket" width="50" height="50">
+                    <div class="svDetails">
+                        <a class="sinv" href="https://discord.gg/ukzQuMB64g" target="_blank" >CordBots</a>
+                        <div class="mStatus">
+                            <div class="gMemberslist">
+                                <i class="online"></i>
+                                123 Çevrim içi
+                                <i class="avaible"></i>
+                                123 üye
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="inviteButton" onclick= "window.open('https://discord.gg/ukzQuMB64g','_blank')">Katıl</button>
+                </div>
             </div>
         </div>
     </div>
