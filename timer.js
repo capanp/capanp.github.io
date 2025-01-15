@@ -44,3 +44,84 @@ function updateClock() {
 // Saat güncelleme fonksiyonunu her saniye çağır
 setInterval(updateClock, 1000);
 updateClock();
+
+
+
+
+
+
+let timerId = null;
+let currentSecond = 0;
+
+function updateCurrentSecond() {
+    const display = document.getElementById("currentSecond");
+    const timeInput = document.getElementById("timeInput").value;
+
+    // Saniye döngüsü
+    currentSecond = (currentSecond % 60) + 1;
+    display.innerText = `${currentSecond}`;
+    console.log(timeInput, currentSecond, currentSecond == timeInput);
+
+    // Yazı rengini ayarla
+    if (timeInput && (currentSecond == timeInput)) {
+        document.getElementById("currentSecond").style.color = "#ffc0cb";
+    } else {
+        document.getElementById("currentSecond").style.color = "#a1a0ab";
+    }
+}
+
+document.getElementById("startButton").addEventListener("click", () => {
+    const timeInput = document.getElementById("timeInput").value;
+    const mode = document.getElementById("modeSelect").value;
+    const alarmSound = document.getElementById("alarmSound");
+
+    // Geçerli bir süre kontrolü (1-60 saniye)
+    if (!timeInput || timeInput < 1 || timeInput > 60) {
+        alert("Lütfen 1-60 arasında bir sayı giriniz.");
+        return;
+    }
+
+    const delay = timeInput * 1000; // Milisaniye cinsinden
+
+    // Timer başlat
+    if (timerId) {
+        clearInterval(timerId);
+    }
+
+    // Tek seferlik modda
+    if (mode === "once") {
+        timerId = setInterval(updateCurrentSecond, 1000);
+        setTimeout(() => {
+            if (currentSecond == timeInput) {
+                alarmSound.play().catch(error => console.error("Ses çalınamadı:", error));
+                // Süre tamamlandığında sıfırlama ve intervali kapatma
+                clearInterval(timerId);
+                currentSecond = 0; // Sıfırlama
+                document.getElementById("currentSecond").innerText = `${currentSecond}`;
+            }
+        }, delay);
+    }
+    // Sonsuz tekrar modunda
+    else if (mode === "repeat") {
+        currentSecond = 0; // Başlangıçta sıfırla
+        timerId = setInterval(() => {
+            updateCurrentSecond();
+            if (currentSecond == timeInput) {
+                alarmSound.play().catch(error => console.error("Ses çalınamadı:", error));
+            }
+        }, 1000);
+    }
+
+    document.getElementById("startButton").disabled = true;
+    document.getElementById("stopButton").disabled = false;
+});
+
+document.getElementById("stopButton").addEventListener("click", () => {
+    if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+    }
+
+    document.getElementById("startButton").disabled = false;
+    document.getElementById("stopButton").disabled = true;
+});
