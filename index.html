@@ -570,7 +570,6 @@
 
         // About tuşuna tıklandığında
         timerButton.addEventListener('click', () => {
-            window.history.pushState(null, '', '/timer');
 
             timerButton.style.color = "white";
             homeButton.style.color = "#a1a0ab";
@@ -595,7 +594,6 @@
         });
 
         homeButton.addEventListener('click', () => {
-            window.history.pushState(null, '', '/');
 
             homeButton.style.color = "white";
             timerButton.style.color = "#a1a0ab";
