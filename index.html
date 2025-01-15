@@ -8,16 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
+    <script src="https://www.steamwidgets.net/api/resource/query?type=js&module=app&version=v1"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <title>Dot Background</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
+
+        .show {
+            display: flex !important;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
         body {
-            color: rgb(161, 160, 171);
+            color: #a1a0ab;
             margin: 0;
             height: 100vh;
             background: radial-gradient(circle, hsl(246, 18%, 15%) 10%, hsl(250, 24%, 9%) 10%) 0 0 / 20px 20px;
@@ -260,26 +271,135 @@
         .timer {
             margin: 0 0 0 10px;
         }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0,40px,0)
+            }
+
+            to {
+                transform: translate3d(0,0,0);
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeInUp {
+            from {
+                transform: translate3d(0,40px,0)
+            }
+
+            to {
+                transform: translate3d(0,0,0);
+                opacity: 1
+            }
+        }
+
+        .animated {
+            transition: all 1s;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-fill-mode: both
+        }
+
+        .animatedFadeInUp {
+            opacity: 0
+        }
+
+        .fadeInUp {
+            opacity: 0;
+            animation-name: fadeInUp;
+            -webkit-animation-name: fadeInUp;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            animation-name: fadeIn;
+        }
+
+        .hidden {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s .4s, opacity .4s linear;
+        }
+
+        .currentSecond {
+            margin: auto;
+            transition: all .2s ease-in;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .pink-timer {
+            background-color: hsl(246, 11%, 22%);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            margin: auto;
+        }
+
+        .background-timer {
+            margin: 5px;
+            background-color: #121018;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            display:flex;
+            position: absolute;
+        }
+
+        .main-timer {
+            margin: auto;
+            z-index: 1;
+        }
+
+        .timer-settings {
+
+            background-color: hsl(246, 11%, 22%);
+            display: block;
+            height: 100px;
+            width: 200px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 14px;
+        }
+
     </style>
 </head>
 <body>
     <nav>
         <ul>
             <li>
-                <a style="color: white;" href="#">Home</a>
+                <a id="home" style="color: white;" href="#">Home</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a id="timer" href="#">Dota 2 Timer</a>
+            </li>
+            <li>
+                <a id="resim" href="#">Resim</a>
+            </li>
+            <li>
+                <a id="about" href="#">Hakkında</a>
             </li>
         </ul>
     </nav>
     <div class="content">
-        <div class="main">
+        <div class="main show" id="home-div">
             <div class="main-space">
-                <h1 class="header" style="color: white;">Çağan, Capano Pehlivano</h1>
-                <p>Merhaba, ben Çağan. Bu sitede genel olarak yaptığım projeleri paylaşıyorum, bunun yanı sıra yaptığım projelerle ilgili çeşitli araçlar ve kaynak kodları da bulabilirsin. </p>
-                <a class="gh" href="https://github.com/capan01" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <h1 id="title" class="header animated animatedFadeInUp fadeInUp" style="color: white;">Çağan, Capano Pehlivano</h1>
+                <p class="animated animatedFadeInUp fadeInUp">Merhaba, ben Çağan. Bu sitede genel olarak yaptığım projeleri paylaşıyorum, bunun yanı sıra yaptığım projelerle ilgili çeşitli araçlar ve kaynak kodları da bulabilirsin. </p>
+                <a class="gh" href="https://github.com/capanp" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github animated animatedFadeInUp fadeInUp" viewBox="0 0 16 16">
                         <defs>
                             <linearGradient id="grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color: #492378; stop-opacity: 1" />
@@ -290,7 +410,7 @@
                     </svg>
                 </a>
                 <a class="fb" href="https://www.facebook.com/capmayan/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook animated animatedFadeInUp fadeInUp" viewBox="0 0 16 16">
                         <defs>
                             <linearGradient id="grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color: #2872fc; stop-opacity: 1" />
@@ -301,7 +421,7 @@
                     </svg>
                 </a>
                 <a class="fb" href="https://steamcommunity.com/id/capansj/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-steam animated animatedFadeInUp fadeInUp" viewBox="0 0 16 16">
                         <defs>
                             <linearGradient id="grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color: #2b86b0; stop-opacity: 1" />
@@ -313,13 +433,13 @@
                         <path fill="url(#grad-3)" d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"/>
                     </svg>
                 </a>
-                <div class="time">
+                <div class="time animated animatedFadeInUp fadeInUp">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
                         <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
                     </svg>
                     <p class="timer" id="clock">undefined</p>
                 </div>
-                <div class="time">
+                <div class="time animated animatedFadeInUp fadeInUp">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-music-note" viewBox="0 0 16 16">
                         <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2"/>
                         <path fill-rule="evenodd" d="M9 3v10H8V3z"/>
@@ -329,31 +449,60 @@
                 </div>
             </div>
         </div>
+
+        <div class="main hide hidden" id="timer-div">
+            <div class="main-space">
+                <h1>Dota 2 Timer</h1>
+                <p class="animated animatedFadeInUp fadeInUp">Dota 2 camps pull hatırlatmak için bir timer, her dakikanın belirlenen saniyesinde ses çalar, önerilen süre 40. saniyedir.. </p>
+                <div class="pink-timer">
+                    <div class="background-timer">
+                        <div class="main-timer">
+                            <div id="currentSecond" class="currentSecond">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timer-settings">
+                    <div>
+                        <label for="timeInput" >Saniye (1-60):</label>
+                        <input type="number" id="timeInput" min="1" max="60" value="40" placeholder="Saniye" />
+                        <label for="modeSelect">Çalma Modu:</label>
+                        <select id="modeSelect">
+                            <option value="repeat">Sonsuza Kadar</option>
+                            <option value="once">Tek Seferlik</option>
+                        </select>
+                        <button id="startButton">Başlat</button>
+                        <button id="stopButton" disabled>Durdur</button>
+                    </div>
+                </div>
+                <audio id="alarmSound" src="sound.wav"></audio>
+            </div>
+        </div>
+        <steam-app class="hide hidden" style="place-content: center; margin-top: 30px;" id="steam" appid="570" class="hidden hide"></steam-app>
     </div>
 
 
-    <div class="discord-boxs">
+    <div id="dc-fade" class="discord-boxs animated animatedFadeInUp show">
         <div class="user">
-            <img src="https://cdn.discordapp.com/avatars/524983207943340052/2821525dba025d6216db5fd0ffd38d80.png?size=64" alt="profile" width="50" height="50">
+            <img id="profile-img" src="https://cdn.discordapp.com/avatars/524983207943340052/2821525dba025d6216db5fd0ffd38d80.png?size=64" alt="profile" width="50" height="50">
             <div class="usernames">
-                <p class="hname">Çağan</p>
-                <p class="mname">capan.</p>
+                <p class="hname" id="name">Çağan</p>
+                <p class="mname" id="username">capan.</p>
                 <p class="mname">524983207943340052</p>
             </div>
         </div>
-        <div class="server">
+        <div id="dc-sv" class="server">
             <div class="svDetails">
                 <p class="sname">BİR SUNUCUYA DAVET EDİLDİNİZ</p>
                 <div class="sStatus">
-                    <img class="sImg" src="https://cdn.discordapp.com/icons/586962324544553011/33f31f3084e2130abb7c74827822deb2.webp?size=64" alt="server" width="50" height="50">
+                    <img class="sImg" id="server-img" src="https://cdn.discordapp.com/icons/586962324544553011/33f31f3084e2130abb7c74827822deb2.webp?size=64" alt="server" width="50" height="50">
                     <div class="svDetails">
-                        <a class="sinv" href="https://discord.gg/ukzQuMB64g" target="_blank" >CordBots</a>
+                        <a class="sinv" id="server-name" href="https://discord.gg/ukzQuMB64g" target="_blank" >CordBots</a>
                         <div class="mStatus">
                             <div class="gMemberslist">
                                 <i class="online"></i>
-                                12 Çevrim içi
+                                <p id="online-members" style="margin: 0 !important;">0 Çevrim içi</p>
                                 <i class="avaible"></i>
-                                123 üye
+                                <p id="total-members" style="margin: 0 !important;">0 Üye</p>
                             </div>
                         </div>
                     </div>
@@ -363,6 +512,114 @@
         </div>
     </div>
 
+
     <script src="timer.js"></script>
+    <script>
+        // JSON Dosyasının URL'si
+        const jsonUrl = 'https://capanp.github.io/data.json';
+
+        // JSON Verisini Çekme ve Sayfaya Yazdırma
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP Hatası: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Resim URL'lerini <img> elementlerine ekle
+                document.getElementById('profile-img').src = data.pp_url;
+                document.getElementById('server-img').src = data.sv_url;
+
+                // Metinleri <p> elementlerine yazdır
+                document.getElementById('name').textContent = `${data.isim}`;
+                document.getElementById('username').textContent = `${data.kullanici_adi}`;
+                document.getElementById('server-name').textContent = `${data.sunucu_adi}`;
+                document.getElementById('online-members').textContent = `${data.online} Çevrim içi`;
+                document.getElementById('total-members').textContent = `${data.members} Üye`;
+            })
+            .catch(error => {
+                console.error('Veri çekme hatası:', error);
+            });
+    </script>
+
+    <script>
+        // H1 öğesini seç
+        const title = document.getElementById('title');
+        const paragraph = document.getElementById('dc-fade');
+
+        const homeButton = document.getElementById('home');
+        const timerButton = document.getElementById('timer');
+
+        const home = document.getElementById('home-div');
+        const discord = document.getElementById('dc-fade');
+
+        const timer = document.getElementById('timer-div');
+        const steam = document.getElementById('steam');
+
+        const delay = t => new Promise(resolve => {
+            setTimeout(() => {
+                paragraph.classList.add('fadeIn');
+                resolve(); // Promise'i tamamlıyoruz
+            }, t);
+        });
+
+        delay(400).then(() => {
+            paragraph.classList.remove('fadeIn', 'animatedFadeInUp')
+        });
+
+        // About tuşuna tıklandığında
+        timerButton.addEventListener('click', () => {
+            window.history.pushState(null, '', '/timer');
+
+            timerButton.style.color = "white";
+            homeButton.style.color = "#a1a0ab";
+
+            home.classList.add('hidden')
+            discord.classList.add('hidden')
+
+            setTimeout(function() {
+                home.classList.remove('show')
+                home.classList.add('hide')
+                discord.classList.remove('show')
+                discord.classList.add('hide')
+
+                timer.classList.remove('hide')
+                timer.classList.add('show')
+                steam.classList.remove('hide')
+                steam.classList.add('show')
+
+                timer.classList.remove('hidden')
+                steam.classList.remove('hidden')
+            }, 400);
+        });
+
+        homeButton.addEventListener('click', () => {
+            window.history.pushState(null, '', '/');
+
+            homeButton.style.color = "white";
+            timerButton.style.color = "#a1a0ab";
+
+            timer.classList.add('hidden')
+            steam.classList.add('hidden')
+
+            setTimeout(function() {
+                timer.classList.remove('show')
+                timer.classList.add('hide')
+                steam.classList.remove('show')
+                steam.classList.add('hide')
+
+                home.classList.remove('hide')
+                home.classList.add('show')
+                discord.classList.remove('hide')
+                discord.classList.add('show')
+
+                home.classList.remove('hidden')
+                discord.classList.remove('hidden')
+            }, 400);
+        });
+
+    </script>
+
 </body>
 </html>
