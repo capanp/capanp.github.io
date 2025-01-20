@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Dizi Sitesi</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="container" role="navigation">
+    <article class="containerNav" style="display: flex;">
+        <div class="navButton navLeft">
+            <a href="index.html" style="margin: auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                </svg>
+            </a>
+            <input type="search" class="arama" placeholder="🔎 Anime ara..." name="arama" required="">
+            <a href="index.html" style="margin: auto 15px;">
+                Tüm Animeler
+            </a>
+        </div>
+        <div class="navButton navRight">
+            <a href="index.html">
+                Geçmiş
+            </a>
+        </div>
+    </article>
+  </nav>
+  <main class="content">
+    <h2 style="margin: 25px 15px;">Son Eklenen Animeler</h2>
+    <div class="populerContent">
+        <div class="populerSeries">
+            <h2 id="populerHeader" class="populerHeader"></h2>
+            <div class="populerDesBox">
+                <p id="populerDes" class="populerDescp"></p>
+            </div>
+            <button type="button" class="populerButton">Şimdi İzle</button>
+            <button type="button" class="populerMark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                </svg>
+                Listeme Ekle
+            </button>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); border-radius: 15px;"></div>
+            <img id="populerImg" src="" style="margin-left: 2px; width: 100%; height: 100%; object-fit: cover; border-radius: 15px;" alt="mainanime">
+        </div>
+        <ul class="populerList">
+            <li style="margin: 0;">
+                <div class="populerListFirst" style="background-color: #28282c;">
+                    <a href="index.html" class="populerListText">Kimetsu no Yaiba</a>
+                </div>
+            </li>
+            <li style="margin: 0;">
+                <div class="populerListFirst">
+                    <a href="index.html" class="populerListText">Kimetsu no Yaiba</a>
+                </div>
+            </li>
+            <li style="margin: 0;">
+                <div class="populerListFirst">
+                    <a href="index.html" class="populerListText">Kimetsu no Yaiba</a>
+                </div>
+            </li>
+            <li style="margin: 0;">
+                <div class="populerListFirst">
+                    <a href="index.html" class="populerListText">Kimetsu no Yaiba</a>
+                </div>
+            </li>
+            <li style="margin: 0;">
+                <div class="populerListFirst">
+                    <a href="index.html" class="populerListText">Kimetsu no Yaiba</a>
+                </div>
+            </li>
+            <li style="margin: 0;">
+                <div class="populerListFirst">
+                    <a href="index.html" class="populerListText">Kimetsu no Yaiba</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <ul id="latest-episodes">
+      <!-- JavaScript ile doldurulacak -->
+    </ul>
+
+    <h2>Tüm Animeler</h2>
+    <ul id="episodes">
+      <!-- JavaScript ile doldurulacak -->
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2025 Anime Site</p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

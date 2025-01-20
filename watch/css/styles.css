@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #101014;
+    color: white;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .container {
+    color: white;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .containerNav {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    min-width: 1000px;
+    margin: 0 auto 0 auto;
+  }
+
+  .content {
+    max-width: 1000px;
+    background-color: #1c1c20;
+    margin: 0 auto 0 auto;
+  }
+
+  .arama[type=search] {
+    margin-left: 15px;
+    transition: all ease 0.1s;
+    background-color: #202024;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    height: 40px;
+    padding-left: 20px; /* İkon için sağlanan boşluk */
+  }
+  
+  .arama[type=search]:hover {
+    background-color: #404044;
+  }
+
+  .arama[type=search]::placeholder {
+    color: rgb(175, 175, 175);
+  }
+
+  .navButton {
+    padding: 0;
+    color: white;
+    display: flex;
+  }
+
+  .navLeft{
+    float:left;
+  }
+
+  .navRight{
+    float: right
+  }
+
+    .populerContent{
+        display: flex;
+    }
+
+    .populerList {
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .populerListFirst {
+        height: 76px;
+        width: 180px;
+        border-radius: 10px;
+        display: flex; /* Flexbox eklenmeli */
+        justify-content: center; /* Yatayda ortalama */
+        align-items: center; /* Dikeyde ortalama */
+        transition: all ease 0.5s;
+    }
+
+    .populerListText {
+        margin: auto;
+        text-align: center; /* Yazının hizalanması */
+    }
+
+  .populerSeries {
+    display: flex;
+    height: 460px;
+    width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 0.1s;
+  }
+
+  .populerHeader {
+    position: absolute;
+    top: 35%;
+    left: 32px;
+    z-index: 1;
+    transition: all ease 1s;
+  }
+
+  .populerDesBox {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    height: 100px;
+    width: 350px; /* Daha geniş bir alan tanımlandı */
+    overflow: hidden;
+    z-index: 1;
+    box-sizing: border-box; /* Padding'i kutu boyutuna dahil eder */
+  }
+  
+  .populerDescp {
+    margin: 0;
+    text-align: left;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: block; /* Esnek kutu yerine blok düzen kullanıldı */
+    height: 100%; /* Kutunun yüksekliğini tamamen doldur */
+    line-height: 1.5; /* Satır aralığı için daha iyi okunabilirlik */
+    transition: all ease 1s;
+  }
+
+  .populerButton {
+    position: absolute;
+    top: 85%;
+    left: 32px;
+    border: none;
+    border-radius: 10px;
+    height: 48px;
+    width: 180px;
+    z-index: 1;
+  }
+
+  .populerMark {
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    top: 85%;
+    left: calc(32px + 180px + 32px);
+    border-radius: 10px;
+    height: 48px;
+    width: 180px;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* İkon ile metin arasına boşluk ekler */
+    border: 0;
+    font-size: 16px; /* Yazı boyutunu belirler */
+  }
+
+  .populerMark:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    color: white;
+  }
+  
+  main ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  main ul li {
+    margin: 10px 0;
+  }
+  
+  main {
+    text-decoration: none;
+    color: white;
+  }
+  
+  main ul li a:hover {
+    text-decoration: underline;
+  }
+  

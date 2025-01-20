@@ -1,0 +1,66 @@
+[
+    {
+      "id": "1",
+      "isim": "Kimetsu no Yaiba",
+      "aciklama": "Eski çağlardan beri ormanda insan yiyen iblisler olduğu söylentisi gezmektedir. Bundan ötürü yerli halk gece vakti dışarıya çıkmayı hiç göze alamıyordu. Aynı zamanda efsaneye göre geceleri bu kana susamış iblisleri avlayan bir iblis avcısı vardır. Genç Tanjirou için bu söylentiler yakında acı gerçeklere dönüşecekti. Babasının ölümünden beri Tanjirou ailesine bakma görevini üstlenmişti. Hayatları trajedilerle karşılaşmış olsa bile mutluluğu bulmuşlardı. Ama bu mutluluk Tanjirou ailesini katledilmiş buluncaya kadardı ve hayatta kalan tek üyesi olan kız kardeşi Nezuko, bir iblise dönüşmüştü. Şaşırtıcı bir şekilde Nezuko hala insan duygularını ve düşüncelerini taşıyordu. Böylelikle Tanjirou'nun iblislerle dövüşme ve kız kardeşini tekrar insana dönüştürme görevi başladı.",
+      "image": "https://assets-prd.ignimgs.com/2022/09/22/demonslayer-1663870772245.jpg",
+      "video_link": "https://example.com/video1"
+    },
+    {
+      "id": "2",
+      "isim": "One Piece",
+      "aciklama": "Korsan Kral Gold Roger, bu dünyadaki herşeyi elde eder ve idam edilirken, tüm servetinin Grand Line'da olduğunu, onu arayıp bulmaları gerektiğini söyler. Bu olaydan sonra herkes Grand Line'a gider. Ancak Grand Line'a girmek çok zor, Grand Line'da canlı kalabilmek imkansızdır. Kahramanımız Monkey D. Luffy'nin rüyası, Korsan Kral olmak ve One Piece denen kimsenin bilmediği, görmediği hazineyi ele geçirmektir. Küçük yaşlardan beri hep korsan olmak isteyen Luffy, kazara bir şeytan meyvası (Akuma No Mi) yemiştir. 3 farklı şeytan meyvası vardır ve bu meyvalar yiyenlere çok üstün güçler sağlamaktadır ancak bu güçlerin bedeli asla yüzememektir. Luffy'nin yediği meyva onu bir lastik çocuğa çevirir. Bu olaydan yıllar sonra Luffy denize açılır. Yolculuğu sırasında ekibini toplayacak ve One Piece'i bulmak için Grand Line'da birbirinden tehlikeli ve komik maceralara atılacaktır.",
+      "image":"https://image.tmdb.org/t/p/original/mBxsapX4DNhH1XkOlLp15He5sxL.jpg",
+      "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "3",
+        "isim": "Jujutsu Kaisen",
+        "aciklama": "Bir çocuk… 'doğru ölüm' için savaşır. Zorluklar, pişmanlık, utanç… İnsanların hissettiği olumsuz duygular günlük hayatımızda gizlenen lanetlere dönüşür. Lanetler tüm dünyaya yayılır; insanları korkunç bir talihsizliğe, hatta ölüme götürebilir. Dahası, lanetler yalnızca başka bir lanetle defedilebilir. Itadori Yuji sıradan bir lise hayatı yaşamakla birlikte çok büyük bir fiziksel güce sahiptir. Bir gün, lanetlerce saldırıya uğrayan bir arkadaşını kurtarmak için İki Yüzlü Hayalet'in parmağını yer ve laneti kendi ruhuna alır. Artık İki Yüzlü Hayalet ile aynı bedeni paylaşmaktadır. Büyücülerin en güçlüsü olan Gojo Satoru'nun yönlendirmesiyle lanetlerle savaşan bir organizasyon olan Tokyo Büyükşehir Teknik Büyücülük Lisesi'ne kabul edilir. Böylece bir laneti def etmek için.",
+        "image":"https://cdn.kayiprihtim.com/wp-content/uploads/2024/08/Jujutsu-Kaisen-Mangasi-Final-Yapiyor.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "4",
+        "isim": "Vinland Saga",
+        "aciklama": "Binlerce yıldır Vikingler, şiddet yanlısı en güçlü soylardan biri olarak kendilerine ad yapmışlardır. Vikinglerin en iyi savaşçılarından birinin oğlu olan Thorfinn, derinden beslediği intikam arzusunu yerine getirmek için yeteneklerini geliştireceği savaş alanlarında çocukluğunu geçirir.",
+        "image":"https://cdn.kayiprihtim.com/wp-content/uploads/2024/11/Vinland-Saga-Manga-Son-Final.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "5",
+        "isim": "Sakamoto Days",
+        "aciklama": "Bir zamanlar yeraltı dünyasının en korkulan suikastçısı olarak bilinen Tarou Sakamoto, zirvedeki hayatını aşk uğruna geride bırakır. Şimdi bir bakkal dükkanında çalışan sıradan bir adam olarak huzurlu bir yaşam sürmektedir. Ancak, geçmişindeki düşmanlar ve eski ortaklar, onun bu yeni hayatını kabullenmekte zorlanır ve onu hedef alır. Sakamoto, ailesini, dükkanını ve yaşadığı küçük kasabayı korumak için eski yeteneklerini kullanmak zorunda kalır. Ancak kendisine verdiği “öldürmeme” sözü, düşmanlarını alt etmek için yaratıcı ve zekice yollar bulmasını gerektirir. Bu durum, hem komik hem de heyecan verici sahnelerle dolu bir macera sunar.",
+        "image":"https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2024%2F11%2F12%2Fsakamoto-days-anime-trailer-release-info-000.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "6",
+        "isim": "Solo Leveling",
+        "aciklama": "Seni öldürmeyen şeyin seni daha güçlü yaptığını söylüyorlar ama dünyanın en zayıf avcısı Sung Jinwoo için durum böyle değil. Jinwoo, yüksek rütbeli bir zindanda canavarlar tarafından vahşice katledildikten sonra, yalnızca kendisinin görebildiği ve onu her açıdan yükselten bir program olan Sistem ile geri döndü. Artık güçlerinin ardındaki sırları ve onları doğuran zindanı keşfetme konusunda ilham alıyor.",
+        "image":"https://m.media-amazon.com/images/S/pv-target-images/d1b4290d1e2b09687e6fb22d6f18261effc3beb771afe4056733091e32c13af4.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "7",
+        "isim": "Girls & Panzer",
+        "aciklama": "Ensha-do olarak bilinen tank savaş sanatı, kızlar için olan geleneksel Japon dövüş sanatlarından biridir. Miho her ne kadar tanklardan kaçmak için Ourai Kız Lisesi'ne girse de sonuç istediği gibi olmaz ve ulusal Sensha-do şampiyonasında yarışması için okul öğrenci konseyi tarafından zorla turnuvaya sokulur. Ancak Miho eskisinden daha güçlüdür, çünkü yanında arkadaşları da olacaktır ve bu güçle okulun oluşturduğu takıma yardım etmeye karar verir.",
+        "image":"https://lh3.googleusercontent.com/-T8oH2hOyYxs/UOzShNGqCYI/AAAAAAAAUYc/b7AavThltI4/s640/ff61264a89ad1e97501b5ab35fa6b80b.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "8",
+        "isim": "Naruto",
+        "aciklama": "Naruto, içine hapsedilmiş kyubii (9 kuyruklu efsanevi tilki) yüzünden Konoha halkı tarafından yaratık olarak görülüp kenara itilmiş bir çocuktur. Naruto'nun bütün hedefi Ninja akademisini bitirip, Hokage olmaktır. Akademi'nin ilk bölümünü bitirip genin olarak mezun olan Naruto, arkadaşları Sakura ve Sasuke ile chunin olabilmek için yeni eğitimlerine başlarlar.",
+        "image":"https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "9",
+        "isim": "Scissor Seven",
+        "aciklama": "Makas sallayıp saç kesen beceriksiz bir sözde suikastçı, hafızasını yeniden kazanmaya çalışırken kendisini kavgalı gruplar arasındaki güç mücadelesinin ortasında bulur.",
+        "image":"https://fromtheintercom.com/wp-content/uploads/scissor-seven-characters-1024x576.jpg",
+        "video_link": "https://example.com/video2"
+    }
+  ]
+  
