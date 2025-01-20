@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const des = document.getElementById("populerDes");
         const image = document.getElementById("populerImg");
 
+        (document.getElementById("1")).innerText = latestEpisodes[0].isim;
+        (document.getElementById("2")).innerText = latestEpisodes[1].isim;
+        (document.getElementById("3")).innerText = latestEpisodes[2].isim;
+        (document.getElementById("4")).innerText = latestEpisodes[3].isim;
+        (document.getElementById("5")).innerText = latestEpisodes[4].isim;
+        (document.getElementById("6")).innerText = latestEpisodes[5].isim;
+
         name.innerText = latestEpisodes[0].isim;
         des.innerText = latestEpisodes[0].aciklama;
         image.src = latestEpisodes[0].image;
