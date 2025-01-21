@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anime Dizi Sitesi</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav class="container" role="navigation">
@@ -29,7 +34,7 @@
     </article>
   </nav>
   <main class="content">
-    <h2 style="margin: 25px 15px;">Son Eklenen Animeler</h2>
+    <h2 style="margin: 10px 0 20px 0;">Son Eklenen Animeler</h2>
     <div class="populerContent">
         <div class="populerSeries">
             <h2 id="populerHeader" class="populerHeader"></h2>
@@ -80,16 +85,49 @@
             </li>
         </ul>
     </div>
-    <ul id="latest-episodes">
-      <!-- JavaScript ile doldurulacak -->
-    </ul>
 
-    <h2>Tüm Animeler</h2>
-    <ul id="episodes">
+    <div class="topLine"></div>
+
+    <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+        <div style="display: flex;">
+            <h2>Popüler Animeler</h2>
+            <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </div>
+        <div style="display: flex;margin-right: 80px;">
+            <h2>Son Bölümler</h2>
+            <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </div>
+    </div>
+    <ul id="episodes" style="margin: 0;">
       <!-- JavaScript ile doldurulacak -->
+       <div class="topContent">
+            <div class="populer-container" id="populerContainer">
+                <!-- Filmler buraya eklenecek -->
+            </div>
+            <div class="rightLine"></div>
+            <div class="scroll-container" id="content"></div>
+        </div>
+        <div class="botLine"></div>
+        <div id="totalContent">
+            <div>
+                <div style="display: flex; margin: 20px 0;">
+                    <h2>Tüm Seriler</h2>
+                    <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                </div>
+                <div class="total-container" id="totalAnimes">
+                    <!-- Filmler buraya eklenecek -->
+                </div>
+            </div>
+        </div>
     </ul>
   </main>
-  <footer>
+  <footer style="margin-top: 50px;">
     <p>&copy; 2025 Anime Site</p>
   </footer>
   <script src="js/script.js"></script>
