@@ -19,11 +19,16 @@ body {
 }
 
 h2 {
-  margin: 20px 0;
+  font-family: 'Inter Tight', 'Segoe UI', sans-serif;
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
 }
 
 h3 {
   font-family: 'Inter Tight', 'Segoe UI', sans-serif;
+  margin: 20px 0 0 0;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -108,13 +113,20 @@ a {
   padding: 0;
 }
 
+.populerImage {
+  width: 40px;
+  border-radius: 8px;
+  height: 50px;
+  object-fit: cover;
+}
+
 .populerListFirst {
   height: 68px;
-  width: 180px;
   border-radius: 10px;
   display: flex;
+  overflow: hidden;
   /* Flexbox eklenmeli */
-  justify-content: center;
+  padding-left: 10px;
   /* Yatayda ortalama */
   align-items: center;
   /* Dikeyde ortalama */
@@ -122,8 +134,7 @@ a {
 }
 
 .populerListText {
-  margin: auto;
-  text-align: center;
+  margin-left: 10px;
   /* Yazının hizalanması */
 }
 
@@ -256,22 +267,29 @@ main ul li a:hover {
   margin: auto;
 }
 
-.topLine {
-  width: 950px;
-  height: 1px;
-  max-width: 950px;
-  max-height: 1px;
+.rightLineAdded {
+  width: 1px;
+  height: 452px;
+  max-width: 1px;
+  max-height: 452px;
   background-color: #404044;
-  margin: 50px auto 10px auto;
+  margin: auto 16px;
 }
 
-.botLine {
-  width: 950px;
+.line {
+  width: 95%;
+  max-width: 1000px;
   height: 1px;
-  max-width: 950px;
   max-height: 1px;
   background-color: #404044;
-  margin: 30px auto 10px auto;
+  margin: 50px auto 50px auto;
+}
+
+.lineImage {
+  width: 64px;
+  border-radius: 8px;
+  height: 80px;
+  object-fit: cover;
 }
 
 
@@ -285,12 +303,12 @@ main ul li a:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 700px;
-  margin: auto;
+  margin: auto auto auto 0;
 }
 
 .total-container {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
   gap: 20px;
   max-width: 1060px;
 }
@@ -316,6 +334,40 @@ main ul li a:hover {
 
 
 
+
+.linedContents {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: inherit;
+}
+
+.linedItems {
+  padding: 10px;
+  width: 180px;
+  border-radius: 10px;
+  display: flex;
+  /* Flexbox eklenmeli */
+  justify-content: flex-start;
+  /* Yatayda ortalama */
+  align-items: center;
+  /* Dikeyde ortalama */
+  transition: all ease 0.1s;
+}
+
+.linedItems:hover {
+  background-color: #202024;
+}
+
+.lineText {
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
 .scroll-container {
   width: 260px;
   height: 472px;
@@ -326,7 +378,7 @@ main ul li a:hover {
   /* Dikey scroll ekler */
   overflow-x: hidden;
   padding: 10px;
-  margin: auto;
+  margin: auto 0 auto auto;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -359,5 +411,23 @@ main ul li a:hover {
 @media (max-width: 995px) {
   .rightLine {
     display: none;
+  }
+
+  .scroll-container {
+    margin: auto;
+  }
+
+  .populer-container {
+    margin: auto;
+  }
+
+  .total-container {
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 785px) {
+  .total-container {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
   }
 }

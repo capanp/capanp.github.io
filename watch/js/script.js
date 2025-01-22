@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const latestEpisodesList = document.getElementById("latest-episodes");
   const episodesList = document.getElementById("episodes");
 
   function getDominantColor(imageUrl, callback) {
@@ -65,16 +64,43 @@ document.addEventListener("DOMContentLoaded", () => {
       const latestEpisodes = sortedEpisodes.slice(0, 6); // İlk 6 animeyi al
       const populerAnimes = sortedEpisodes.slice(0, 8); // İlk 8 animeyi al
 
+      const lastAdded = sortedEpisodes.slice(0, 5); // İlk 6 animeyi al
+      const populerAdded = sortedEpisodes.slice(0, 5); // İlk 6 animeyi al
+      const pendingAdded = sortedEpisodes.slice(0, 5); // İlk 6 animeyi al
+
       const name = document.getElementById("populerHeader");
       const des = document.getElementById("populerDes");
       const image = document.getElementById("populerImg");
 
-      (document.getElementById("1")).innerText = latestEpisodes[0].isim;
-      (document.getElementById("2")).innerText = latestEpisodes[1].isim;
-      (document.getElementById("3")).innerText = latestEpisodes[2].isim;
-      (document.getElementById("4")).innerText = latestEpisodes[3].isim;
-      (document.getElementById("5")).innerText = latestEpisodes[4].isim;
-      (document.getElementById("6")).innerText = latestEpisodes[5].isim;
+      const lineLastList = document.getElementById("last-added");
+      const linePopulerList = document.getElementById("populer-added");
+      const linePendingList = document.getElementById("pending-added");
+
+      const populerListDivs = document.querySelectorAll('.populerListFirst');
+
+      console.log(populerListDivs.length);
+
+      // Her div'e ilgili içeriği ekle
+      populerListDivs.forEach((div, index) => {
+          const episode = latestEpisodes[index];
+      
+          // <img> etiketi oluştur
+          const img = document.createElement('img');
+          img.src = episode.image;
+          img.alt = episode.isim;
+          img.className = "populerImage";
+      
+          // <a> etiketi oluştur
+          const link = document.createElement('a');
+          link.id = (index + 1).toString();  // 1'den 6'ya kadar ID atama
+          link.href = episode.video_link;
+          link.innerHTML = episode.isim;
+          link.className = 'populerListText';
+      
+          // Oluşturulan öğeleri div'in içine ekle
+          div.appendChild(img);
+          div.appendChild(link);
+      });
 
       name.innerText = latestEpisodes[0].isim;
       des.innerText = latestEpisodes[0].aciklama;
@@ -100,6 +126,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         populerContainer.appendChild(card);
       });
+
+
+
+
+
+      lastAdded.forEach((episode) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<img class="lineImage" src="${episode.image}" alt="${episode.isim}"></img><a class="lineText" href="episode.html?anime=${episode.isim}">${episode.isim}</a>`;
+        li.classList.add('linedItems');
+        lineLastList.appendChild(li);
+      });
+
+      populerAdded.forEach((episode) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<img class="lineImage" src="${episode.image}" alt="${episode.isim}"></img><a class="lineText" href="episode.html?anime=${episode.isim}">${episode.isim}</a>`;
+        li.classList.add('linedItems');
+        linePopulerList.appendChild(li);
+      });
+
+      pendingAdded.forEach((episode) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<img class="lineImage" src="${episode.image}" alt="${episode.isim}"></img><a class="lineText" href="episode.html?anime=${episode.isim}">${episode.isim}</a>`;
+        li.classList.add('linedItems');
+        linePendingList.appendChild(li);
+      });
+
+
+
+
 
       episodes.forEach(film => {
         const card = document.createElement('div');
