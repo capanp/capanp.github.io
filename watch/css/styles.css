@@ -1,278 +1,315 @@
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #101014;
-    color: white;
-  }
+  margin: 0;
+  padding: 0;
+  background-color: rgb(16, 16, 20);
+  color: white;
+}
 
-  h2 {
-    margin: 20px 0;
-  }
+.background {
+  box-shadow:
+    inset 4px 0 40px rgba(0, 0, 0, 0.1),
+    /* Üst sol köşe */
+    inset 0 4px 160px rgba(0, 0, 0, 0.1),
+    /* Üst sağ köşe */
+    inset 0 -4px 160px rgba(0, 0, 0, 0.1),
+    /* Alt sol köşe */
+    inset -40px -40px 80px rgba(0, 0, 0, 0.1);
+  /* Alt sağ köşe */
+}
 
-  h3 {
-    font-family: 'Inter Tight', 'Segoe UI', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 20px;
-  }
+h2 {
+  margin: 20px 0;
+}
 
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .container {
-    color: white;
-    padding: 30px;
-    text-align: center;
-  }
+h3 {
+  font-family: 'Inter Tight', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
 
-  .containerNav {
-    display: block;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1060px;
-    min-width: 1060px;
-    margin: 0 auto 0 auto;
-    background-color: transparent;
-  }
+a {
+  text-decoration: none;
+  color: white;
+}
 
-  .content {
-    max-width: 1060px;
-    background-color: transparent;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+.container {
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
 
-  .arama[type=search] {
-    margin-left: 15px;
-    transition: all ease 0.1s;
-    background-color: #202024;
-    color: white;
-    border: none;
-    border-radius: 40px;
-    height: 40px;
-    padding-left: 20px; /* İkon için sağlanan boşluk */
-  }
-  
-  .arama[type=search]:hover {
-    background-color: #404044;
-  }
+.containerNav {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1060px;
+  margin: 0 auto 0 auto;
+  background-color: transparent;
+}
 
-  .arama[type=search]::placeholder {
-    color: rgb(175, 175, 175);
-  }
+.content {
+  max-width: 1060px;
+  background-color: transparent;
+  margin: 0 auto;
+  overflow: visible;
+}
 
-  .navButton {
-    padding: 0;
-    color: white;
-    display: flex;
-  }
+.arama[type=search] {
+  margin-left: 15px;
+  transition: all ease 0.1s;
+  background-color: #202024;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  height: 40px;
+  padding-left: 20px;
+  /* İkon için sağlanan boşluk */
+}
 
-  .navLeft{
-    float:left;
-  }
+.arama[type=search]:hover {
+  background-color: #404044;
+}
 
-  .navRight{
-    float: right
-  }
+.arama[type=search]::placeholder {
+  color: rgb(175, 175, 175);
+}
 
-    .populerContent{
-        display: flex;
-        flex-wrap: wrap; /* Yeni satıra geçişi sağlamak için */
-        justify-content: space-between; /* Boşlukları kaldırır */
-    }
+.navButton {
+  padding: 0;
+  color: white;
+  display: flex;
+}
 
-    .populerList {
-        max-width: 200px;
-        margin: auto;
-    }
+.navLeft {
+  float: left;
+}
 
-    .populerListFirst {
-        height: 76px;
-        width: 180px;
-        border-radius: 10px;
-        display: flex; /* Flexbox eklenmeli */
-        justify-content: center; /* Yatayda ortalama */
-        align-items: center; /* Dikeyde ortalama */
-        transition: all ease 0.5s;
-    }
+.navRight {
+  float: right
+}
 
-    .populerListText {
-        margin: auto;
-        text-align: center; /* Yazının hizalanması */
-    }
+.populerContent {
+  display: flex;
+  flex-wrap: initial;
+  /* Yeni satıra geçişi sağlamak için */
+  justify-content: space-between;
+  /* Boşlukları kaldırır */
+}
 
-  .populerSeries {
-    display: flex;
-    height: 460px;
-    width: 800px;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    transition: all ease 0.1s;
+.populerList {
+  max-width: 200px;
+  margin: auto;
+}
 
-    flex-grow: 1;
-    min-width: 0;
-  }
+.populerList li {
+  margin: 0;
+  padding: 0;
+}
 
-  .populerHeader {
-    position: absolute;
-    top: 35%;
-    left: 32px;
-    z-index: 1;
-    transition: all ease 1s;
-  }
+.populerListFirst {
+  height: 68px;
+  width: 180px;
+  border-radius: 10px;
+  display: flex;
+  /* Flexbox eklenmeli */
+  justify-content: center;
+  /* Yatayda ortalama */
+  align-items: center;
+  /* Dikeyde ortalama */
+  transition: all ease 0.5s;
+}
 
-  .populerDesBox {
-    position: absolute;
-    top: 50%;
-    left: 32px;
-    height: 100px;
-    width: 350px; /* Daha geniş bir alan tanımlandı */
-    overflow: hidden;
-    z-index: 1;
-    box-sizing: border-box; /* Padding'i kutu boyutuna dahil eder */
-  }
-  
-  .populerDescp {
-    margin: 0;
-    text-align: left;
-    word-wrap: break-word;
-    overflow: hidden;
-    display: block; /* Esnek kutu yerine blok düzen kullanıldı */
-    height: 100%; /* Kutunun yüksekliğini tamamen doldur */
-    line-height: 1.5; /* Satır aralığı için daha iyi okunabilirlik */
-    transition: all ease 1s;
-  }
+.populerListText {
+  margin: auto;
+  text-align: center;
+  /* Yazının hizalanması */
+}
 
-  .populerButton {
-    position: absolute;
-    top: 85%;
-    left: 32px;
-    border: none;
-    border-radius: 10px;
-    height: 48px;
-    width: 180px;
-    z-index: 1;
-  }
+.populerSeries {
+  display: flex;
+  height: 460px;
+  width: 800px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
 
-  .populerMark {
-    color: white;
-    background-color: transparent;
-    position: absolute;
-    top: 85%;
-    left: calc(32px + 180px + 32px);
-    border-radius: 10px;
-    height: 48px;
-    width: 180px;
-    z-index: 1;
+  flex-grow: 1;
+  min-width: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px; /* İkon ile metin arasına boşluk ekler */
-    border: 0;
-    font-size: 16px; /* Yazı boyutunu belirler */
-  }
+  -webkit-box-shadow:0px 0px 150px 0px rgba(255,255,255,0.05);
+  -moz-box-shadow: 0px 0px 150px 0px rgba(255,255,255,0.05);
+  box-shadow: 0px 0px 150px 0px rgba(255,255,255,0.05);
+  transition: box-shadow 0.5s ease-in-out, transform 1s ease-in-out;
+}
 
-  .populerMark:hover{
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px;
-    color: white;
-    background-color: #202020;
-  }
-  
-  main ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  main ul li {
-    margin: 10px 0;
-  }
-  
-  main {
-    text-decoration: none;
-    color: white;
-  }
-  
-  main ul li a:hover {
-    text-decoration: underline;
-  }
+.populerHeader {
+  position: absolute;
+  top: 35%;
+  left: 32px;
+  z-index: 1;
+  transition: all ease 1s;
+}
 
+.populerDesBox {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  height: 100px;
+  width: 350px;
+  /* Daha geniş bir alan tanımlandı */
+  overflow: hidden;
+  z-index: 1;
+  box-sizing: border-box;
+  /* Padding'i kutu boyutuna dahil eder */
+}
 
-  .topContent {
-    display: flex;
-  }
+.populerDescp {
+  margin: 0;
+  text-align: left;
+  word-wrap: break-word;
+  overflow: hidden;
+  display: block;
+  /* Esnek kutu yerine blok düzen kullanıldı */
+  height: 100%;
+  /* Kutunun yüksekliğini tamamen doldur */
+  line-height: 1.5;
+  /* Satır aralığı için daha iyi okunabilirlik */
+  transition: all ease 1s;
+}
 
-  .rightLine {
-    width: 1px;
-    height: 452px;
-    max-width: 1px;
-    max-height: 452px;
-    margin: 20px 50px;
-    background-color: #404044;
-  }
+.populerButton {
+  position: absolute;
+  top: 85%;
+  left: 32px;
+  border: none;
+  border-radius: 10px;
+  height: 48px;
+  width: 180px;
+  z-index: 1;
+}
 
-  .topLine {
-    width: 950px;
-    height: 1px;
-    max-width: 950px;
-    max-height: 1px;
-    background-color: #404044;
-    margin: 50px auto 10px auto;
-  }
+.populerMark {
+  color: white;
+  background-color: transparent;
+  position: absolute;
+  top: 85%;
+  left: calc(32px + 180px + 32px);
+  border-radius: 10px;
+  height: 48px;
+  width: 180px;
+  z-index: 1;
 
-  .botLine {
-    width: 950px;
-    height: 1px;
-    max-width: 950px;
-    max-height: 1px;
-    background-color: #404044;
-    margin: 30px auto 10px auto;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  /* İkon ile metin arasına boşluk ekler */
+  border: 0;
+  font-size: 16px;
+  /* Yazı boyutunu belirler */
+}
 
+.populerMark:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
+footer {
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background-color: #202020;
+}
 
+main ul {
+  list-style: none;
+  padding: 0;
+}
 
+main ul li {
+  margin: 10px 0;
+}
+
+main {
+  text-decoration: none;
+  color: white;
+}
+
+main ul li a:hover {
+  text-decoration: underline;
+}
 
 
+.topContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
 
-  .populer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 700px;
+.rightLine {
+  width: 1px;
+  height: 452px;
+  max-width: 1px;
+  max-height: 452px;
+  background-color: #404044;
+  margin: auto;
+}
+
+.topLine {
+  width: 950px;
+  height: 1px;
+  max-width: 950px;
+  max-height: 1px;
+  background-color: #404044;
+  margin: 50px auto 10px auto;
+}
+
+.botLine {
+  width: 950px;
+  height: 1px;
+  max-width: 950px;
+  max-height: 1px;
+  background-color: #404044;
+  margin: 30px auto 10px auto;
+}
+
+
+
+
+
+
+
+.populer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 700px;
+  margin: auto;
 }
 
 .total-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 20px;
-  max-width: 1060px; 
+  max-width: 1060px;
 }
 
 .film-card {
-    border-radius: 8px;
-    cursor: pointer;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .film-card img {
-    width: 160px;
-    border-radius: 8px;
-    height: 190px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 160px;
+  border-radius: 8px;
+  height: 190px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .film-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 
@@ -285,9 +322,11 @@ body {
   background-color: #202024;
   border-radius: 8px;
   border: 0;
-  overflow-y: scroll; /* Dikey scroll ekler */
+  overflow-y: scroll;
+  /* Dikey scroll ekler */
   overflow-x: hidden;
   padding: 10px;
+  margin: auto;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -297,8 +336,10 @@ body {
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  background-color: #a6a6a6;  /* Scrollbar rengi */
-  border-radius: 8px;     /* Kenarları yuvarlat */
+  background-color: #a6a6a6;
+  /* Scrollbar rengi */
+  border-radius: 8px;
+  /* Kenarları yuvarlat */
 }
 
 .scroll-container::-webkit-scrollbar-thumb:hover {
@@ -309,6 +350,14 @@ body {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+
 .item:last-child {
   border-bottom: none;
+}
+
+
+@media (max-width: 995px) {
+  .rightLine {
+    display: none;
+  }
 }

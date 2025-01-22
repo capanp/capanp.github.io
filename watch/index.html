@@ -1,135 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Dizi Sitesi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Dizi Sitesi</title>
 
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-  <nav class="container" role="navigation">
-    <article class="containerNav" style="display: flex;">
-        <div class="navButton navLeft">
-            <a href="index.html" style="margin: auto;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-house-fill" viewBox="0 0 16 16">
-                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                </svg>
-            </a>
-            <input type="search" class="arama" placeholder="🔎 Anime ara..." name="arama" required="">
-            <a href="index.html" style="margin: auto 15px;">
-                Tüm Animeler
-            </a>
-        </div>
-        <div class="navButton navRight">
-            <a href="index.html">
-                Geçmiş
-            </a>
-        </div>
-    </article>
-  </nav>
-  <main class="content">
-    <h2 style="margin: 10px 0 20px 0;">Son Eklenen Animeler</h2>
-    <div class="populerContent">
-        <div class="populerSeries">
-            <h2 id="populerHeader" class="populerHeader"></h2>
-            <div class="populerDesBox">
-                <p id="populerDes" class="populerDescp"></p>
+    <div class="background">
+        <nav class="container" role="navigation">
+            <article class="containerNav" style="display: flex;">
+                <div class="navButton navLeft">
+                    <a href="index.html" style="margin: auto;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                            class="bi bi-house-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+                            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
+                        </svg>
+                    </a>
+                    <input type="search" class="arama" placeholder="🔎 Anime ara..." name="arama" required="">
+                    <a href="index.html" style="margin: auto 15px;">
+                        Tüm Animeler
+                    </a>
+                </div>
+                <div class="navButton navRight">
+                    <a href="index.html">
+                        Geçmiş
+                    </a>
+                </div>
+            </article>
+        </nav>
+        <main class="content">
+            <h2 style="margin: 10px 0 20px 0;">Son Eklenen Animeler</h2>
+            <div class="populerContent">
+                <div class="populerSeries">
+                    <h2 id="populerHeader" class="populerHeader"></h2>
+                    <div class="populerDesBox">
+                        <p id="populerDes" class="populerDescp"></p>
+                    </div>
+                    <button type="button" class="populerButton">Şimdi İzle</button>
+                    <button type="button" class="populerMark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                            <path
+                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                        </svg>
+                        Listeme Ekle
+                    </button>
+                    <div class="populerImgBox" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); border-radius: 15px;"></div>
+                    <img id="populerImg" src=""
+                        style="margin-left: 2px; width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"
+                        alt="mainanime">
+                </div>
+                <ul class="populerList">
+                    <li style="margin: 0px 0 10px 10px;">
+                        <div class="populerListFirst" style="background-color: #28282c;">
+                            <a id="1" href="index.html" class="populerListText"></a>
+                        </div>
+                    </li>
+                    <li style="margin: 10px 0 10px 10px;">
+                        <div class="populerListFirst">
+                            <a id="2" href="index.html" class="populerListText"></a>
+                        </div>
+                    </li>
+                    <li style="margin: 10px 0 10px 10px;">
+                        <div class="populerListFirst">
+                            <a id="3" href="index.html" class="populerListText"></a>
+                        </div>
+                    </li>
+                    <li style="margin: 10px 0 10px 10px;">
+                        <div class="populerListFirst">
+                            <a id="4" href="index.html" class="populerListText"></a>
+                        </div>
+                    </li>
+                    <li style="margin: 10px 0 10px 10px;">
+                        <div class="populerListFirst">
+                            <a id="5" href="index.html" class="populerListText"></a>
+                        </div>
+                    </li>
+                    <li style="margin: 10px 0 0 10px;">
+                        <div class="populerListFirst">
+                            <a id="6" href="index.html" class="populerListText"></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <button type="button" class="populerButton">Şimdi İzle</button>
-            <button type="button" class="populerMark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
-                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
-                </svg>
-                Listeme Ekle
-            </button>
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); border-radius: 15px;"></div>
-            <img id="populerImg" src="" style="margin-left: 2px; width: 100%; height: 100%; object-fit: cover; border-radius: 15px;" alt="mainanime">
-        </div>
-        <ul class="populerList">
-            <li style="margin: 0;">
-                <div class="populerListFirst" style="background-color: #28282c;">
-                    <a id="1" href="index.html" class="populerListText"></a>
-                </div>
-            </li>
-            <li style="margin: 0;">
-                <div class="populerListFirst">
-                    <a id="2" href="index.html" class="populerListText"></a>
-                </div>
-            </li>
-            <li style="margin: 0;">
-                <div class="populerListFirst">
-                    <a id="3" href="index.html" class="populerListText"></a>
-                </div>
-            </li>
-            <li style="margin: 0;">
-                <div class="populerListFirst">
-                    <a id="4" href="index.html" class="populerListText"></a>
-                </div>
-            </li>
-            <li style="margin: 0;">
-                <div class="populerListFirst">
-                    <a id="5" href="index.html" class="populerListText"></a>
-                </div>
-            </li>
-            <li style="margin: 0;">
-                <div class="populerListFirst">
-                    <a id="6" href="index.html" class="populerListText"></a>
-                </div>
-            </li>
-        </ul>
-    </div>
 
-    <div class="topLine"></div>
+            <div class="topLine"></div>
 
-    <div style="display: flex; justify-content: space-between; margin: 20px 0;">
-        <div style="display: flex;">
-            <h2>Popüler Animeler</h2>
-            <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-            </svg>
-        </div>
-        <div style="display: flex;margin-right: 80px;">
-            <h2>Son Bölümler</h2>
-            <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
-            </svg>
-        </div>
-    </div>
-    <ul id="episodes" style="margin: 0;">
-      <!-- JavaScript ile doldurulacak -->
-       <div class="topContent">
-            <div class="populer-container" id="populerContainer">
-                <!-- Filmler buraya eklenecek -->
-            </div>
-            <div class="rightLine"></div>
-            <div class="scroll-container" id="content"></div>
-        </div>
-        <div class="botLine"></div>
-        <div id="totalContent">
-            <div>
-                <div style="display: flex; margin: 20px 0;">
-                    <h2>Tüm Seriler</h2>
-                    <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+                <div style="display: flex;">
+                    <h2>Popüler Animeler</h2>
+                    <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29"
+                        fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                     </svg>
                 </div>
-                <div class="total-container" id="totalAnimes">
-                    <!-- Filmler buraya eklenecek -->
+                <div style="display: flex;margin-right: 80px;">
+                    <h2>Son Bölümler</h2>
+                    <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29" height="29"
+                        fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                    </svg>
                 </div>
             </div>
-        </div>
-    </ul>
-  </main>
-  <footer style="margin-top: 50px;">
-    <p>&copy; 2025 Anime Site</p>
-  </footer>
-  <script src="js/script.js"></script>
+                <!-- JavaScript ile doldurulacak -->
+                <div class="topContent">
+                    <div class="populer-container" id="populerContainer">
+                        <!-- Filmler buraya eklenecek -->
+                    </div>
+                    <div class="rightLine"></div>
+                    <div class="scroll-container" id="content"></div>
+                </div>
+                <div class="botLine"></div>
+                <div id="totalContent">
+                    <div>
+                        <div style="display: flex; margin: 20px 0;">
+                            <h2>Tüm Seriler</h2>
+                            <svg style="margin: 20px 0 20px 10px;" xmlns="http://www.w3.org/2000/svg" width="29"
+                                height="29" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                        <div class="total-container" id="totalAnimes">
+                            <!-- Filmler buraya eklenecek -->
+                        </div>
+                    </div>
+                </div>
+        </main>
+        <footer style="margin-top: 50px;">
+            <p>&copy; 2025 Anime Site</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
