@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
       episodes.forEach(item => {
         const div = document.createElement('div');
         div.classList.add('item');
-        div.innerHTML = `<strong>${item.isim}</strong><br>${item.image}`;
+        div.innerHTML = `<img class="populerImage" src="${item.image}"></img><div style = "display: block;"><p>12. bölüm</p><a class="populerListText" href="${item.video_link}">${item.isim}</a></div>`;
         contentDiv.appendChild(div);
       });
 

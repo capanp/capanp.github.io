@@ -18,6 +18,13 @@ body {
   /* Alt sağ köşe */
 }
 
+p {
+  margin: 0 0 0 10px;
+  opacity: 0.5;
+  font-size: 12px;
+  padding: 0;
+}
+
 h2 {
   font-family: 'Inter Tight', 'Segoe UI', sans-serif;
   margin: 0 0 20px 0;
@@ -62,7 +69,7 @@ a {
 }
 
 .arama[type=search] {
-  margin-left: 15px;
+  margin: 5px 0 5px 15px;
   transition: all ease 0.1s;
   background-color: #202024;
   color: white;
@@ -192,6 +199,8 @@ a {
 }
 
 .populerButton {
+  background-color: white;
+  color: black;
   position: absolute;
   top: 85%;
   left: 32px;
@@ -200,6 +209,10 @@ a {
   height: 48px;
   width: 180px;
   z-index: 1;
+}
+
+.populerButton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .populerMark {
@@ -471,20 +484,19 @@ main ul li a:hover {
 .scroll-container {
   width: 260px;
   height: 472px;
-  background-color: #202024;
+  background-color: transparent;
   border-radius: 8px;
   border: 0;
   overflow-y: scroll;
   /* Dikey scroll ekler */
   overflow-x: hidden;
-  padding: 10px;
   margin: auto 0 auto auto;
 }
 
 .scroll-container::-webkit-scrollbar {
   background-color: #4d4d4d;
   border-radius: 8px;
-  width: 6px;
+  width: 4px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
@@ -499,8 +511,14 @@ main ul li a:hover {
 }
 
 .item {
+  display: flex;
+  align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #404044;
+}
+
+.item img {
+  opacity: 1 !important;
 }
 
 .item:last-child {
