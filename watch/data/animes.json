@@ -45,7 +45,7 @@
         "id": "7",
         "isim": "Girls Panzer",
         "aciklama": "Ensha-do olarak bilinen tank savaş sanatı, kızlar için olan geleneksel Japon dövüş sanatlarından biridir. Miho her ne kadar tanklardan kaçmak için Ourai Kız Lisesi'ne girse de sonuç istediği gibi olmaz ve ulusal Sensha-do şampiyonasında yarışması için okul öğrenci konseyi tarafından zorla turnuvaya sokulur. Ancak Miho eskisinden daha güçlüdür, çünkü yanında arkadaşları da olacaktır ve bu güçle okulun oluşturduğu takıma yardım etmeye karar verir.",
-        "image":"https://m.media-amazon.com/images/S/pv-target-images/8a660ebd6451557a4b290a820fef014bb103ca64dd669a1fc063535279511273._SX1080_FMjpg_.jpg",
+        "image":"https://lh3.googleusercontent.com/-T8oH2hOyYxs/UOzShNGqCYI/AAAAAAAAUYc/b7AavThltI4/s640/ff61264a89ad1e97501b5ab35fa6b80b.jpg",
         "video_link": "https://example.com/video2"
     },
     {
@@ -60,6 +60,13 @@
         "isim": "Scissor Seven",
         "aciklama": "Makas sallayıp saç kesen beceriksiz bir sözde suikastçı, hafızasını yeniden kazanmaya çalışırken kendisini kavgalı gruplar arasındaki güç mücadelesinin ortasında bulur.",
         "image":"https://fromtheintercom.com/wp-content/uploads/scissor-seven-characters-1024x576.jpg",
+        "video_link": "https://example.com/video2"
+    },
+    {
+        "id": "10",
+        "isim": "Mushoku Tensei",
+        "aciklama": "Tanımadığı birini trafik kazasından kurtarırken ölen 34 yaşındaki bir NEET büyülü bir dünyaya Rudeus Greyrat isminde yeni doğmuş bir bebek olarak reenkarne olur. Geçmiş hayatından ona kalan bilgisi, tecrübesi ve pişmanlıklarıyla beraber daha önce yaptığı yanlışları yapmadan dolu dolu bir hayat yaşamaya çalışmaya karar verir. Oldukça yüksek olan büyü güçleri ve yetişkin beyniyle ailesi ve çevresi tarafından bir dahi olarak görülse de içinde hala bir otaku ruhu taşımaktadır.",
+        "image":"https://cabanadoleitor.com.br/wp-content/uploads/2022/07/Mushoku-Tensei.webp",
         "video_link": "https://example.com/video2"
     }
   ]

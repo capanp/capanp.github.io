@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const animeDetailsContainer = document.getElementById("anime-details");
   
     // JSON dosyasını al
-    fetch("data/episodes.json")
+    fetch("data/animes.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("JSON dosyası yüklenemedi");
@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((episodes) => {
         const episode = episodes.find(e => e.isim === animeIsim);
+        console.log(animeIsim)
   
         if (episode) {
+          console.log(episode)
           animeDetailsContainer.innerHTML = `
             <h2>${episode.isim}</h2>
             <p>${episode.aciklama}</p>

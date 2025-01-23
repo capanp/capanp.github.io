@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
   // JSON dosyasını al
-  fetch("data/animes.json")
+  fetch("data/animes.json?v=${new Date().getTime()}")
     .then((response) => {
       if (!response.ok) {
         throw new Error("JSON dosyası yüklenemedi");
@@ -77,8 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const linePendingList = document.getElementById("pending-added");
 
       const populerListDivs = document.querySelectorAll('.populerListFirst');
-
-      console.log(populerListDivs.length);
 
       // Her div'e ilgili içeriği ekle
       populerListDivs.forEach((div, index) => {
@@ -109,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(latestEpisodes[0]);
 
       const populerContainer = document.getElementById('populerContainer');
+      const topTenContainer = document.getElementById('topTen');
       const totalContainer = document.getElementById('totalAnimes');
 
       populerAnimes.forEach(film => {
@@ -152,8 +151,39 @@ document.addEventListener("DOMContentLoaded", () => {
         linePendingList.appendChild(li);
       });
 
+      episodes.forEach((film, index) => {
+        const card = document.createElement('div');
+        card.classList.add('top-card');
 
+        card.onclick = function() {
+          window.location.href = `episode.html?anime=${film.isim}`;
+        }
 
+        card.innerHTML = `
+            <h2 style="position:absolute; z-index: 0; top: 50%; left: 10%; font-size: 150px; margin: 0; text-shadow: 0px 0px 40px rgba(255, 255, 255, 0.25);">${index+1}</h2>
+            <img style="position:absolute;" src="${film.image}" alt="${film.isim}">
+            <h3 style="position:absolute; top: 0; left: 0;">${film.isim}</h3>
+        `;
+
+        topTenContainer.appendChild(card);
+      });
+
+      const itemWrapper = document.getElementById('topTen');
+      const prevBtn = document.getElementById('left-button');
+      const nextBtn = document.getElementById('right-button');
+      
+      const containerWidth = 400; // Görünen alan genişliği
+      
+      // Sağa kaydır
+      nextBtn.addEventListener('click', () => {
+        itemWrapper.scrollLeft += containerWidth;
+      });
+
+      // Sola kaydır
+      prevBtn.addEventListener('click', () => {
+        console.log("uie")
+          itemWrapper.scrollLeft -= containerWidth;
+      });
 
 
       episodes.forEach(film => {
@@ -182,7 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
         div.innerHTML = `<strong>${item.isim}</strong><br>${item.image}`;
         contentDiv.appendChild(div);
       });
-
 
       const divs = document.querySelectorAll('.populerListFirst');
       let currentIndex = 1;

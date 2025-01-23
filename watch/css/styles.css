@@ -118,6 +118,7 @@ a {
   border-radius: 8px;
   height: 50px;
   object-fit: cover;
+  opacity: 0.5;
 }
 
 .populerListFirst {
@@ -260,6 +261,7 @@ main ul li a:hover {
 
 .rightLine {
   width: 1px;
+  min-width: 1px;
   height: 452px;
   max-width: 1px;
   max-height: 452px;
@@ -269,11 +271,12 @@ main ul li a:hover {
 
 .rightLineAdded {
   width: 1px;
-  height: 452px;
+  min-width: 1px;
+  height: 540px;
   max-width: 1px;
-  max-height: 452px;
+  max-height: 540px;
   background-color: #404044;
-  margin: auto 16px;
+  margin: 60px 16px auto 16px;
 }
 
 .line {
@@ -281,6 +284,7 @@ main ul li a:hover {
   max-width: 1000px;
   height: 1px;
   max-height: 1px;
+  min-height: 1px;
   background-color: #404044;
   margin: 50px auto 50px auto;
 }
@@ -316,6 +320,7 @@ main ul li a:hover {
 .film-card {
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.1s ease;
 }
 
 .film-card img {
@@ -330,6 +335,97 @@ main ul li a:hover {
   transform: translateY(-5px);
 }
 
+.categoryHeaders {
+  user-select: none;
+  transition: all 0.1s ease;
+}
+
+.categoryHeaders:hover {
+  transform: translateX(10px);
+}
+
+
+
+
+
+
+
+
+.top-ten-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  max-height: 240px;
+}
+
+.top-ten-container::-webkit-scrollbar {
+  background-color: transparent;
+  border-radius: 8px;
+  width: 6px;
+  height: 4px;
+}
+
+.top-ten-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  /* Scrollbar rengi */
+  border-radius: 8px;
+}
+
+.top-ten-container::-webkit-scrollbar-thumb:hover {
+  background-color: #4d4d4d;
+}
+
+.top-card {
+  padding: 110px 150px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.top-card img {
+  top: 0;
+  width: 50%;
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topTenAltBox {
+  position: relative;
+}
+
+.tenButton {
+  display: flex;
+  align-items: center;  /* Dikey hizalama */
+  justify-content: center; /* Yatay hizalama */
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  text-align: center;
+
+  width: 30px;
+  height: 30px;
+  background: #343437;
+  cursor: pointer;
+
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.tenButton:hover {
+  background-color: #636366;
+}
+
+
+
+
 
 
 
@@ -343,7 +439,7 @@ main ul li a:hover {
 
 .linedItems {
   padding: 10px;
-  width: 180px;
+  width: 310px;
   border-radius: 10px;
   display: flex;
   /* Flexbox eklenmeli */
@@ -363,6 +459,10 @@ main ul li a:hover {
 }
 
 
+
+.lastAdded, .populerAdded, .pendingAdded {
+  margin: 0;
+}
 
 
 
@@ -413,20 +513,28 @@ main ul li a:hover {
     display: none;
   }
 
-  .scroll-container {
-    margin: auto;
+  .lastScroll{
+    margin: 50px auto auto auto;
   }
 
-  .populer-container {
+  .populerScroll {
     margin: auto;
   }
 
   .total-container {
     grid-template-columns: repeat(5, minmax(100px, 1fr));
   }
+
+  .linedItems {
+    width: 180px;
+  }
+
+  .rightLineAdded {
+    display: none;
+  }
 }
 
-@media (max-width: 785px) {
+@media (max-width: 850px) {
   .total-container {
     grid-template-columns: repeat(4, minmax(100px, 1fr));
   }
