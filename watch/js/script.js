@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const episodesList = document.getElementById("episodes");
+  //merahba denme
+  let x = 110;
+  console.log(x);
 
   function getDominantColor(imageUrl, callback) {
     const img = new Image();
@@ -50,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 }
 
-  // JSON dosyasını al
-  fetch("data/animes.json?v=${new Date().getTime()}")
+  // JSON dosyasını al 
+  fetch('data/animes.json?v=' + new Date().getTime())
     .then((response) => {
       if (!response.ok) {
         throw new Error("JSON dosyası yüklenemedi");
@@ -64,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const latestEpisodes = sortedEpisodes.slice(0, 6); // İlk 6 animeyi al
       const populerAnimes = sortedEpisodes.slice(0, 8); // İlk 8 animeyi al
 
-      const lastAdded = sortedEpisodes.slice(0, 5); // İlk 6 animeyi al
-      const populerAdded = sortedEpisodes.slice(0, 5); // İlk 6 animeyi al
-      const pendingAdded = sortedEpisodes.slice(0, 5); // İlk 6 animeyi al
+      const lastAdded = sortedEpisodes.slice(0, 8); // İlk 6 animeyi al
+      const populerAdded = sortedEpisodes.slice(0, 8); // İlk 6 animeyi al
+      const pendingAdded = sortedEpisodes.slice(0, 8); // İlk 6 animeyi al
 
       const name = document.getElementById("populerHeader");
       const des = document.getElementById("populerDes");
@@ -106,9 +109,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.log(latestEpisodes[0]);
 
+      const lastContainer = document.getElementById('lastContainer');
       const populerContainer = document.getElementById('populerContainer');
       const topTenContainer = document.getElementById('topTen');
       const totalContainer = document.getElementById('totalAnimes');
+
+      populerAnimes.forEach(film => {
+        const card = document.createElement('div');
+        card.classList.add('film-card');
+
+        card.onclick = function() {
+          window.location.href = `episode.html?anime=${film.isim}`;
+        }
+
+        card.innerHTML = `
+            <img src="${film.image}" alt="${film.isim}">
+            <h3>${film.isim}</h3>
+            <p>12. bölüm</p>
+        `;
+
+        lastContainer.appendChild(card);
+      });
 
       populerAnimes.forEach(film => {
         const card = document.createElement('div');
@@ -130,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-      lastAdded.forEach((episode) => {
+      episodes.forEach((episode) => {
         const li = document.createElement("li");
         li.innerHTML = `<img class="lineImage" src="${episode.image}" alt="${episode.isim}"></img><a class="lineText" href="episode.html?anime=${episode.isim}">${episode.isim}</a>`;
         li.classList.add('linedItems');
@@ -168,21 +189,44 @@ document.addEventListener("DOMContentLoaded", () => {
         topTenContainer.appendChild(card);
       });
 
-      const itemWrapper = document.getElementById('topTen');
-      const prevBtn = document.getElementById('left-button');
-      const nextBtn = document.getElementById('right-button');
-      
-      const containerWidth = 400; // Görünen alan genişliği
-      
+      const lastWrapper = document.getElementById('last');
+      const populerWrapper = document.getElementById('populerContainer');
+      const topTenWrapper = document.getElementById('topTen');
+
+      const lastPrevBtn = document.getElementById('last-left-button');
+      const lastNextBtn = document.getElementById('last-right-button');
+      const populerPrevBtn = document.getElementById('populer-left-button');
+      const populerNextBtn = document.getElementById('populer-right-button');
+      const topTenPrevBtn = document.getElementById('topTen-left-button');
+      const topTenNextBtn = document.getElementById('topTen-right-button');
+
       // Sağa kaydır
-      nextBtn.addEventListener('click', () => {
-        itemWrapper.scrollLeft += containerWidth;
+      lastNextBtn.addEventListener('click', () => {
+        lastWrapper.scrollLeft += 180;
       });
 
       // Sola kaydır
-      prevBtn.addEventListener('click', () => {
-        console.log("uie")
-          itemWrapper.scrollLeft -= containerWidth;
+      lastPrevBtn.addEventListener('click', () => {
+        lastWrapper.scrollLeft -= 180;
+      });
+
+      // Sağa kaydır
+      populerNextBtn.addEventListener('click', () => {
+        populerWrapper.scrollLeft += 180;
+      });
+
+      // Sola kaydır
+      populerPrevBtn.addEventListener('click', () => {
+        populerWrapper.scrollLeft -= 180;
+      });
+
+      topTenNextBtn.addEventListener('click', () => {
+        topTenWrapper.scrollLeft += 400;
+      });
+
+      // Sola kaydır
+      topTenPrevBtn.addEventListener('click', () => {
+        topTenWrapper.scrollLeft -= 400;
       });
 
 
