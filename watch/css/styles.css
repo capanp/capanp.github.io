@@ -281,6 +281,9 @@ main ul li a:hover {
   text-decoration: underline;
 }
 
+img {
+  user-select: none;
+}
 
 .topContent {
   display: flex;
@@ -587,17 +590,6 @@ main ul li a:hover {
 }
 
 @media (max-width: 995px) {
-  .rightLine {
-    display: none;
-  }
-
-  .lastScroll{
-    margin: 50px auto auto auto;
-  }
-
-  .populerScroll {
-    margin: auto;
-  }
 
   .total-container {
     grid-template-columns: repeat(5, minmax(100px, 1fr));
@@ -606,14 +598,18 @@ main ul li a:hover {
   .linedItems {
     width: 180px;
   }
-
-  .rightLineAdded {
-    display: none;
-  }
 }
 
 @media (max-width: 850px) {
   .total-container {
     grid-template-columns: repeat(4, minmax(100px, 1fr));
   }
+}
+
+::-moz-selection {
+  background: #cf455c;
+}
+
+::selection {
+  background: #cf455c;
 }

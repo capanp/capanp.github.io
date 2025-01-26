@@ -7,7 +7,7 @@
     <meta content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Anistia</title>
+    <title>Anistia - Ana Sayfa</title>
 
     <script>
         var timestamp = new Date().getTime();
@@ -15,7 +15,7 @@
         link.rel = 'stylesheet';
         link.href = 'css/styles.css?v=' + timestamp;
         document.head.appendChild(link);
-      </script>
+    </script>
 
     <link rel="icon" type="image/x-icon" href="./images/logo.ico">
 
@@ -201,8 +201,6 @@
                         </ul>
                     </div>
 
-                    <!-- <div class="rightLineAdded" ></div> -->
-
                     <div class="lists" style="margin: auto auto auto 0;">
                         <div class="categoryHeaders" style="display: flex;">
                             <h2>En Popüler</h2>
@@ -216,8 +214,6 @@
 
                         </ul>
                     </div>
-
-                    <!-- <div class="rightLineAdded"></div> -->
 
                     <div class="lists" style="margin: auto auto auto 0;" >
                         <div class="categoryHeaders" style="display: flex;">
@@ -235,7 +231,7 @@
                 </div>
             </div>
 
-            <div class="line" style="margin-top: 40px !important;"></div>
+            <div class="line"></div>
 
             <div id="totalContent">
                 <div>
@@ -257,7 +253,7 @@
                 <a href="index.html"><img style="position: absolute; bottom: 0; right: 30%; clip-path: inset(0px, 200px, 200px, 0px);" height="330px" width="220px" src="./images/kasane_teto.png" alt="kasane"></a>
 
             <div class="footer-space" style="width: 1060px; margin: auto; text-align: start;">
-                <a href="index.html" style="user-select: none;"><img height="40px" width="164px" src="./images/logo.png" alt="anistia"></a>
+                <a href="index.html"><img height="40px" width="164px" src="./images/logo.png" alt="anistia"></a>
                 <br>
                 <p class="footer-text">Copyright &copy; 2025, Anistia Tüm hakları saklıdır.</p>
                 <a style="margin-right: 10px;" class="gh" href="https://github.com/capanp" target="_blank">
@@ -276,7 +272,7 @@
                         <path fill="#666666" d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"/>
                     </svg>
                 </a>
-                <a style="margin-right: 10px;" class="fb" href="https://steamcommunity.com/id/capansj/" target="_blank">
+                <a style="margin-right: 10px;" class="fb" href="https://discord.gg/ukzQuMB64g" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
                         <path fill="#666666" d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
                       </svg>
@@ -286,7 +282,13 @@
             </div>
         </footer>
     </div>
-    <script src="js/script.js?v=<?php echo time(); ?>"></script>
+    <script src="./js/script.js?v=<?php echo time(); ?>"></script>
+    <script>
+        var timestamp = new Date().getTime();
+        var script = document.createElement('script');
+        script.src = './js/script.js?v=' + timestamp;
+        document.head.appendChild(script);
+    </script>
 </body>
 
 </html>

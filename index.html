@@ -7,389 +7,39 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./images/logo.ico">
+
+    <script>
+        var timestamp = new Date().getTime();
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './css/styles.css?v=' + timestamp;
+        document.head.appendChild(link);
+    </script>
     
     <script src="https://www.steamwidgets.net/api/resource/query?type=js&module=app&version=v1"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <title>Dot Background</title>
+    <title>Ana Sayfa</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
-    <style>
-
-        .show {
-            display: flex !important;
-        }
-
-        .hide {
-            display: none !important;
-        }
-
-        body {
-            color: #a1a0ab;
-            margin: 0;
-            height: 100vh;
-            background: radial-gradient(circle, hsl(246, 18%, 15%) 10%, hsl(250, 24%, 9%) 10%) 0 0 / 20px 20px;
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            font-size: 16px; line-height: 24px;
-        }
-
-        a:link {
-            text-decoration: none;
-            color: rgb(200, 200, 200);
-        }
-
-        nav {
-            color: inherit;
-            display: flex;
-            justify-content: center;
-            background-color: hsl(250, 24%, 9%);
-            padding-top: 40px;
-        }
-
-        nav ul {
-            display: inherit;
-            column-gap: 32px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            width: 700px;
-        }
-
-        nav a {
-            color: inherit;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        img {
-            border-radius: 50%;
-            margin: auto;
-        }
-
-        .sImg {
-            border-radius: 15px !important;
-            margin: auto;
-        }
-
-        .content {
-            margin: 40px 0;
-        }
-
-        .main {
-            margin-left: auto; margin-right: auto;
-            max-width: 700px;
-            background-color: #121018;
-            border-color: hsl(246, 11%, 22%);
-            border-style: solid; border-width: 1px; border-radius: 12px;
-        }
-
-        .main-space {
-            border: none;
-            padding: 30px 40px 30px 40px;
-        }
-
-        .server {
-            padding: 16px 16px;
-            margin-right: 0 !important;
-        }
-
-        .user {
-            padding: 16px 16px;
-            margin: 0 !important;
-        }
-
-        .header{
-            font-size: 40px;
-            font-weight: 500;
-            line-height: 50px;
-            margin: 0;
-        }
-
-        .content a svg path {
-            filter: brightness(1);
-            transition: filter 0.3s ease;
-        }
-
-        .content a:hover svg path {
-            filter: brightness(0.8);
-            transition: filter 0.3s ease;
-        }
-
-        .content a {
-            color: inherit;
-            font-size: 24px;
-            font-weight: bold;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .content .fb {
-            margin-left: 32px;
-        }
-
-        .discord-boxs {
-            display: flex;
-            margin-left: auto; margin-right: auto;
-            max-width: 700px;
-        }
-
-        .discord-boxs div {
-            background-color: hsl(246, 11%, 22%);
-            display: flex;
-            margin: 0 auto 0 auto;
-            max-width: 432px;
-            min-width: 160px;
-            border-radius: 4px;
-        }
-
-        .usernames {
-            display: block !important;
-            padding-left: 0 !important;
-        }
-
-        .usernames .hname {
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
-            color: rgb(200, 200, 200);
-        }
-
-        .usernames .mname {
-            font-family: 'Open Sans', 'Segoe UI', sans-serif;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 18px;
-        }
-
-        .usernames p{
-            margin: 2px 0 0 10px !important;
-            font-family: 'Open Sans', 'Segoe UI', sans-serif;
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 18px;
-        }
-
-        .svDetails {
-            display: block !important;
-            padding: 0 !important;
-        }
-
-        .sStatus {
-            padding: 0 !important;
-            display: flex !important;
-        }
-
-        .svDetails .sname {
-            font-weight: 700;
-            font-size: 12px;
-            line-height: 16px;
-            margin: 0 0 5px 0;
-        }
-
-        .sinv {
-            margin-left: 10px;
-            color: rgb(200, 200, 200);
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 24px;
-        }
-
-        .sinv:hover{
-            text-decoration: underline;
-        }
-
-        .gMemberslist {
-            padding: 0;
-            margin: 0 !important;
-            
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 18px;
-        }
-
-        .mStatus {
-            padding: 0 !important;
-        }
-
-        .statusText {
-            font-family: 'Open Sans', 'Segoe UI', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
-            margin: 0!important;
-        }
-
-        .inviteButton {
-            margin-left: 40px;
-            font-family: 'Open Sans', 'Segoe UI', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 14px;
-            background-color: #23a55a;
-            border: none; border-radius: 3px;
-            transition: background-color 0.2s ease;
-            cursor: pointer;
-            padding: 2px 16px 2px 16px;
-        }
-        
-        .inviteButton:hover{
-            background-color: #216337;
-        }
-
-        .uieuie::marker {
-            margin: 0 !important;
-        }
-
-        .online {
-            margin-top: 5px;
-            margin-left: 10px;
-            margin-right: 2px;
-            width: 8px !important;height: 8px !important;
-            border-radius: 50%;
-            background-color: #31a55e;
-        }
-
-        .avaible {
-            margin-top: 5px;
-            margin-left: 10px;
-            margin-right: 2px;
-            width: 8px !important;height: 8px !important;
-            border-radius: 50%;
-            background-color: #80848d;
-        }
-
-        .time {
-            margin-top: 20px;
-            display: flex;
-        }
-
-        .timer {
-            margin: 0 0 0 10px;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                transform: translate3d(0,40px,0)
-            }
-
-            to {
-                transform: translate3d(0,0,0);
-                opacity: 1
-            }
-        }
-
-        @-webkit-keyframes fadeInUp {
-            from {
-                transform: translate3d(0,40px,0)
-            }
-
-            to {
-                transform: translate3d(0,0,0);
-                opacity: 1
-            }
-        }
-
-        .animated {
-            transition: all 1s;
-            animation-duration: 1s;
-            animation-fill-mode: both;
-            -webkit-animation-duration: 1s;
-            -webkit-animation-fill-mode: both
-        }
-
-        .animatedFadeInUp {
-            opacity: 0
-        }
-
-        .fadeInUp {
-            opacity: 0;
-            animation-name: fadeInUp;
-            -webkit-animation-name: fadeInUp;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .fadeIn {
-            opacity: 0;
-            animation-name: fadeIn;
-        }
-
-        .hidden {
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s .4s, opacity .4s linear;
-        }
-
-        .currentSecond {
-            margin: auto;
-            transition: all .2s ease-in;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .pink-timer {
-            background-color: hsl(246, 11%, 22%);
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            margin: auto;
-        }
-
-        .background-timer {
-            margin: 5px;
-            background-color: #121018;
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
-            display:flex;
-            position: absolute;
-        }
-
-        .main-timer {
-            margin: auto;
-            z-index: 1;
-        }
-
-        .timer-settings {
-
-            background-color: hsl(246, 11%, 22%);
-            display: block;
-            height: 100px;
-            width: 200px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 14px;
-        }
-
-    </style>
 </head>
 <body>
     <nav>
         <ul>
             <li>
-                <a id="home" style="color: white;">Home</a>
+                <a id="home" style="color: white;">Ana Sayfa</a>
             </li>
             <li>
                 <a id="timer">Dota 2 Timer</a>
             </li>
             <li>
-                <a id="resim">Resim</a>
+                <a id="resim" href="./watch/index.html">Anistia - Anime İzle 🔗</a>
             </li>
             <li>
-                <a id="about" href="test.html">Hakkında</a>
+                <a id="about" href="https://www.artstation.com/cagan-pehlivan">Artstation 🔗</a>
             </li>
         </ul>
     </nav>
@@ -439,14 +89,6 @@
                     </svg>
                     <p class="timer" id="clock">undefined</p>
                 </div>
-                <div class="time animated animatedFadeInUp fadeInUp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-music-note" viewBox="0 0 16 16">
-                        <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2"/>
-                        <path fill-rule="evenodd" d="M9 3v10H8V3z"/>
-                        <path d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5z"/>
-                      </svg>
-                      <p class="timer" id="clock">Son oynatılan, Haarper • Archon</p>
-                </div>
             </div>
         </div>
 
@@ -474,7 +116,7 @@
                         <button id="stopButton" disabled>Durdur</button>
                     </div>
                 </div>
-                <audio id="alarmSound" src="sound.wav"></audio>
+                <audio id="alarmSound" src="./data/sound.wav"></audio>
             </div>
         </div>
         <steam-app class="hide hidden" style="place-content: center; margin-top: 30px;" id="steam" appid="570" class="hidden hide"></steam-app>
@@ -511,118 +153,17 @@
             </div>
         </div>
     </div>
-
-
-    <script src="timer.js"></script>
     <script>
-        // JSON Dosyasının URL'si
-        const jsonUrl = 'https://capanp.github.io/data.json';
-
-        // JSON Verisini Çekme ve Sayfaya Yazdırma
-        fetch(jsonUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP Hatası: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Resim URL'lerini <img> elementlerine ekle
-                document.getElementById('profile-img').src = data.pp_url;
-                document.getElementById('server-img').src = data.sv_url;
-
-                // Metinleri <p> elementlerine yazdır
-                document.getElementById('name').textContent = `${data.isim}`;
-                document.getElementById('username').textContent = `${data.kullanici_adi}`;
-                document.getElementById('server-name').textContent = `${data.sunucu_adi}`;
-                document.getElementById('online-members').textContent = `${data.online} Çevrim içi`;
-                document.getElementById('total-members').textContent = `${data.members} Üye`;
-            })
-            .catch(error => {
-                console.error('Veri çekme hatası:', error);
-            });
+        var timestamp = new Date().getTime();
+        var script = document.createElement('script');
+        script.src = './js/script.js?v=' + timestamp;
+        document.head.appendChild(script);
     </script>
-
-    <script>
-        // H1 öğesini seç
-        const title = document.getElementById('title');
-        const paragraph = document.getElementById('dc-fade');
-
-        const homeButton = document.getElementById('home');
-        const timerButton = document.getElementById('timer');
-
-        const home = document.getElementById('home-div');
-        const discord = document.getElementById('dc-fade');
-
-        const timer = document.getElementById('timer-div');
-        const steam = document.getElementById('steam');
-
-        const delay = t => new Promise(resolve => {
-            setTimeout(() => {
-                paragraph.classList.add('fadeIn');
-                resolve(); // Promise'i tamamlıyoruz
-            }, t);
-        });
-
-        delay(400).then(() => {
-            paragraph.classList.remove('fadeIn', 'animatedFadeInUp')
-        });
-
-        // About tuşuna tıklandığında
-        timerButton.addEventListener('click', () => {
-
-            timerButton.style.color = "white";
-            homeButton.style.color = "#a1a0ab";
-
-            home.classList.add('hidden')
-            discord.classList.add('hidden')
-
-            setTimeout(function() {
-                home.classList.remove('show')
-                home.classList.add('hide')
-                discord.classList.remove('show')
-                discord.classList.add('hide')
-
-                timer.classList.remove('hide')
-                timer.classList.add('show')
-                steam.classList.remove('hide')
-                steam.classList.add('show')
-
-                timer.classList.remove('hidden')
-                steam.classList.remove('hidden')
-            }, 400);
-        });
-
-        homeButton.addEventListener('click', () => {
-
-            homeButton.style.color = "white";
-            timerButton.style.color = "#a1a0ab";
-
-            timer.classList.add('hidden')
-            steam.classList.add('hidden')
-
-            setTimeout(function() {
-                timer.classList.remove('show')
-                timer.classList.add('hide')
-                steam.classList.remove('show')
-                steam.classList.add('hide')
-
-                home.classList.remove('hide')
-                home.classList.add('show')
-                discord.classList.remove('hide')
-                discord.classList.add('show')
-
-                home.classList.remove('hidden')
-                discord.classList.remove('hidden')
-            }, 400);
-        });
-
-            document.getElementById("about").addEventListener("click", function() {
-            // Yeni sayfaya yönlendirme
-            window.location.href = "test.html";
-        });
-
-    </script>
-
+        <script>
+            var timestamp = new Date().getTime();
+            var script = document.createElement('script');
+            script.src = './js/timer.js?v=' + timestamp;
+            document.head.appendChild(script);
+        </script>
 </body>
 </html>

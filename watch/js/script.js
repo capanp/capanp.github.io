@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
   // JSON dosyasını al 
-  fetch('data/animes.json?v=' + new Date().getTime())
+  fetch('./data/animes.json?v=' + new Date().getTime())
     .then((response) => {
       if (!response.ok) {
         throw new Error("JSON dosyası yüklenemedi");
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         card.innerHTML = `
-            <h2 style="position:absolute; z-index: 0; top: 50%; left: 10%; font-size: 150px; margin: 0; text-shadow: 0px 0px 40px rgba(255, 255, 255, 0.25);">${index+1}</h2>
+            <h2 style="position:absolute; z-index: 0; top: 50%; left: 10%; font-size: 150px; margin: 0; text-shadow: 0px 0px 40px rgba(255, 255, 255, 0.25); user-select: none;">${index+1}</h2>
             <img style="position:absolute;" src="${film.image}" alt="${film.isim}">
             <h3 style="position:absolute; top: 0; left: 0;">${film.isim}</h3>
         `;
