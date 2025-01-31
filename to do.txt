@@ -1,0 +1,5 @@
+- to do
+    !! önemliler
+    % mc kart yapısı
+    % steam mağaza öğeleri
+    % arama yerini düzelt

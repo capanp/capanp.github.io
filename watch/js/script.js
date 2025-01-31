@@ -112,6 +112,7 @@ fetch('./data/animes.json?v=' + new Date().getTime())
 
     const lastContainer = document.getElementById('lastContainer');
     const populerContainer = document.getElementById('populerContainer');
+    const actionContainer = document.getElementById('actionContainer');
     const topTenContainer = document.getElementById('topTen');
     const totalContainer = document.getElementById('totalAnimes');
 
@@ -147,6 +148,45 @@ fetch('./data/animes.json?v=' + new Date().getTime())
 
       populerContainer.appendChild(card);
     });
+
+    populerAnimes.forEach(film => {
+      const card = document.createElement('div');
+      card.classList.add('new-card');
+
+      card.onclick = function () {
+        window.location.href = `episode.html?anime=${film.isim}`;
+      }
+
+      card.innerHTML = `
+            <img class="topImage" width="160" height="160" src="${film.image}" alt="${film.isim}">
+            <img class="botImage" width="160" height="220" src="${film.image}" alt="${film.isim}">
+            <div class="carddiv">
+                <p class="cardtext text">${film.isim}</p>
+                <div class="desbot">
+                    <div class="puan text">9.5
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                          </svg>
+                    </div>
+                    <div class="episodebox">24 Bölüm</div>
+                </div>
+            </div>
+        `;
+
+      actionContainer.appendChild(card);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

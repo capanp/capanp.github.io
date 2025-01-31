@@ -1,0 +1,82 @@
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #19191d;
+  padding: 0;
+  margin: 0; /* Ensure there's no default margin */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Make the body take up the full viewport height */
+}
+
+.wrap {
+  display: flex;
+  margin: auto;
+  gap: 20px;
+}
+
+.mccard {
+  background-color: transparent;
+  height: 200px;
+  width: 160px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.topimage {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  mask-image: linear-gradient(to top, transparent, white 36%, black);
+}
+
+.botimage {
+  width: 160px;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(15px) saturate(1.2);
+}
+
+.carddiv {
+  margin: 0;
+  padding: 8px;
+  width: calc(100% - 16px);
+  height: 20%;
+  position: absolute;
+  z-index: 2;
+  top: calc(80% - 16px);
+  left: 0;
+}
+
+.desbot {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardtext {
+  padding: 0;
+  margin: 0;
+}
+
+.episodebox {
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.text {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.puan {
+  display: flex;
+  align-items: center; /* Dikey hizalama */
+  gap: 4px;
+}
