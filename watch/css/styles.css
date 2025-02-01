@@ -24,6 +24,12 @@ p {
   padding: 0;
 }
 
+h1 {
+  font-family: 'Inter Tight', 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 h2 {
   font-family: 'Inter Tight', 'Segoe UI', sans-serif;
   margin: 0 0 20px 0;
@@ -47,7 +53,7 @@ a {
 
 .container {
   color: white;
-  padding: 30px;
+  padding: 30px 0;
   text-align: center;
 }
 
@@ -55,7 +61,7 @@ a {
   display: block;
   justify-content: space-between;
   align-items: center;
-  max-width: 1060px;
+  max-width: 1100px;
   margin: 0 auto 0 auto;
   background-color: transparent;
 }
@@ -523,7 +529,7 @@ img {
 
 .scroll-container {
   width: 260px;
-  height: 472px;
+  height: calc(71px*10);
   background-color: transparent;
   border-radius: 8px;
   border: 0;
@@ -560,26 +566,20 @@ img {
 }
 
 
-
-
-.lastScroll {
+.side-tools {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
   position: absolute;
-  left: 105%;
-  background-color: rgba(32, 32, 36, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  border-radius: 15px;
+  top: 0;
+  left: 105%; 
 }
 
-.detailSearch {
-  position: absolute;
-  left: 105%;
-  top: 0;
-  background-color: rgba(32, 32, 36, 0.3);
+.lastScroll {
+  background-color: #19191d;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 15px;
   border-radius: 15px;
-  z-index: 5;
 }
 
 
@@ -613,6 +613,9 @@ img {
 }
 
 @media (max-width: 1780px) {
+  .detailSearch {
+    display: none;
+  }
   .lastScroll {
     display: none;
   }
@@ -661,46 +664,46 @@ img {
 
 
 
-.new-card {
+.card {
   flex-shrink: 0 !important;
   min-width: 160px !important;
   background-color: transparent;
-  height: 220px;
+  height: 230px;
   width: 160px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .topImage {
   width: 160px;
-  height: 160px;
+  height: 180px;
   object-fit: cover;
   position: absolute;
   z-index: 1;
-  mask-image: linear-gradient(to top, transparent, white 36%, black);
+  mask-image: linear-gradient(to top, transparent, white 20%, black);
 }
 
 .botImage {
   width: 160px;
   height: 100%;
   object-fit: cover;
-  filter: blur(15px) saturate(1.2);
+  filter: blur(50px) saturate(1.2);
 }
 
 .carddiv {
   margin: 0;
   padding: 8px;
   width: calc(100% - 16px);
-  height: 20%;
   position: absolute;
   z-index: 2;
-  top: calc(80% - 16px);
+  bottom: 0;
   left: 0;
 }
 
 .desbot {
-  margin-top: 10px;
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
 }
@@ -708,6 +711,7 @@ img {
 .cardtext {
   padding: 0;
   margin: 0;
+  word-break: break-all;
 }
 
 .episodebox {
@@ -720,8 +724,8 @@ img {
 
 .text {
   color: white;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
+
 }
 
 .puan {

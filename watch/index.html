@@ -11,10 +11,10 @@
 
     <script>
         var timestamp = new Date().getTime();
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'css/styles.css?v=' + timestamp;
-        document.head.appendChild(link);
+        var main = document.createElement('link');
+        main.rel = 'stylesheet';
+        main.href = 'css/styles.css?v=' + timestamp;
+        document.head.appendChild(main);
     </script>
 
     <link rel="icon" type="image/x-icon" href="./images/logo.ico">
@@ -92,26 +92,17 @@
 
             <div class="line"></div>
 
-            <div class="lastScroll">
-                <div class="categoryHeaders" style="display: flex;margin-right: 80px;">
-                    <h2>Son Bölümler</h2>
-                    <svg style="margin: 0 0 20px 0;" xmlns="http://www.w3.org/2000/svg" width="29" height="29"
-                        fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                    </svg>
-                </div>
-                <div class="scroll-container" id="content"></div>
-            </div>
-
-            <div class="detailSearch">
-                <div class="categoryHeaders" style="display: flex;margin-right: 80px;">
-                    <h2>Detaylı Arama</h2>
-                    <svg style="margin: 0 0 20px 0;" xmlns="http://www.w3.org/2000/svg" width="29" height="29"
-                        fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                    </svg>
+            <div class="side-tools">
+                <div class="lastScroll">
+                    <div class="categoryHeaders" style="display: flex;margin-right: 80px;">
+                        <h2>Son Bölümler</h2>
+                        <svg style="margin: 0 0 20px 0;" xmlns="http://www.w3.org/2000/svg" width="29" height="29"
+                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    <div class="scroll-container" id="content"></div>
                 </div>
             </div>
 
