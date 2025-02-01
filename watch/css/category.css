@@ -31,7 +31,7 @@ body {
     width: 680px;
     height: 380px;
     border-radius: 10px;
-    background-color: #101014;
+    background-color: #141010;
 }
 
 .tur-container {
@@ -110,4 +110,8 @@ body {
     margin: 15px 0;
     font-size: 16px;
 }
+
+iframe {
+    color-scheme: light;
+  }
 

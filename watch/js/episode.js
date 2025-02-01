@@ -4,6 +4,7 @@ const animeIsim = urlParams.get('anime');
 //const animeDetailsContainer = document.getElementById("anime-details");
 const animeName = document.getElementById("top-name");
 const animeDescription = document.getElementById("desc");
+const commentCount = document.getElementById("comment-count");
 
 // JSON dosyasını al
 fetch("data/animes.json")
@@ -15,6 +16,7 @@ fetch("data/animes.json")
   })
   .then((episodes) => {
     const episode = episodes.find(e => e.isim === animeIsim);
+    commentCount.href = `./episode.html?anime=${animeIsim.replace(/ /g, "%20")}#disqus_thread`
     console.log(animeIsim)
 
     if (episode) {
