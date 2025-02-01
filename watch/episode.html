@@ -84,43 +84,127 @@
         </div>
 
         <div class="details"></div>
-
         <div class="main-content">
           <div class="player-div">
-            <div class="image-div"></div>
+            <div id="image-div" class="image-div">
+              <div class="player-items">
+                <img width="680" height="380"
+                  src="https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg"
+                  alt="uie">
+              </div>
+              <div class="player-items">
+                <iframe width="680" height="380" src="https://www.youtube.com/embed/-G9BqkgZXRA?si=agIfcC6VZzdZVb_W"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                  <iframe width="680" height="380" src="https://video.sibnet.ru/shell.php?videoid=3642169"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+              </div>
+            </div>
+
+
+
+            <div class="image-contents-div">
+              <img class="bot-img slider-item selected"
+                src="https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg"
+                alt="uie">
+              <div class="bot-img video slider-item">
+                <img class="bot-img" style="margin: 0;"
+                  src="https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg"
+                  alt="uie">
+                <svg class="playIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                  class="bi bi-play-fill" viewBox="0 0 16 16">
+                  <path
+                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                </svg>
+              </div>
+            </div>
+
+
+            <p class="bot-header" style="text-indent: 3px; font-size: 14px;">Açıklama</p>
             <div class="description-div">
               <p class="desc" id="desc">Yükleniyor...</p>
             </div>
           </div>
           <div class="episode-div">
-            <p style="text-indent: 3px; font-size: 14px;">Türler</p>
-            <div class="tur-container">
-              <p class="tur-text">Aksiyon</p>
-              <p class="tur-text">Romantizm</p>
-              <p class="tur-text">Seinen</p>
-              <p class="tur-text">Shounen</p>
-              <p class="tur-text">Shounen</p>
-              <p class="tur-text">Shounen</p>
-              <p class="tur-text">Shounen</p>
-            </div>
-            <button class="watch button">Şimdi İzle</button>
-            <button class="normal-color button">Listeme Ekle</button>
-            <div class="details" style="margin-top: 10px;">
-              <div class="detail-row">
-                <p class="detail-text">Yapımcı Stüdyo</p>
-                <p class="detail-text" style="color: white;">Square Enix</p>
+            <ul class="episode-button-container">
+              <li class="episode-buttons selected-button">Detaylar</li>
+              <li id="start" class="episode-buttons">Bölümler</li>
+            </ul>
+            <div id="slider-episode" class="slider-episode" style="overflow: hidden;">
+              <div class="border">
+                <p style="text-indent: 3px; font-size: 14px; margin-top: 15px;">Türler</p>
+                <div class="tur-container">
+                  <p class="tur-text">Aksiyon</p>
+                  <p class="tur-text">Romantizm</p>
+                  <p class="tur-text">Seinen</p>
+                  <p class="tur-text">Shounen</p>
+                  <p class="tur-text">Shounen</p>
+                  <p class="tur-text">Shounen</p>
+                  <p class="tur-text">Shounen</p>
+                </div>
+                <button class="watch button" onclick="document.getElementById('start').click()">Şimdi İzle</button>
+                <button class="normal-color button">Listeme Ekle</button>
+                <div class="details" style="margin-top: 10px;">
+                  <div class="detail-row">
+                    <p class="detail-text">Yapımcı Stüdyo</p>
+                    <p class="detail-text" style="color: white;">Square Enix</p>
+                  </div>
+                  <div class="detail-row">
+                    <p class="detail-text">Yapım Yılı</p>
+                    <p class="detail-text" style="color: white;">2020</p>
+                  </div>
+                  <div style="display: flex; justify-content: space-between;">
+                    <button class="normal-color bot-buttons"
+                      onclick="navigator.clipboard.writeText(window.location.href)">Paylaş</button>
+                    <button class="normal-color bot-buttons">Bildir</button>
+                  </div>
+                </div>
               </div>
-              <div class="detail-row">
-                <p class="detail-text">Yapım Yılı</p>
-                <p class="detail-text" style="color: white;">2020</p>
+
+              <div class="border2" style="padding-left: 13px;">
+                <ul class="bolumler">
+                  <li class="bolum-buttons">1. Bölüm</li>
+                  <li class="bolum-buttons">2. Bölüm</li>
+                  <li class="bolum-buttons">3. Bölüm</li>
+                  <li class="bolum-buttons">4. Bölüm</li>
+                  <li class="bolum-buttons">5. Bölüm</li>
+                  <li class="bolum-buttons">6. Bölüm</li>
+                  <li class="bolum-buttons">7. Bölüm</li>
+                  <li class="bolum-buttons">8. Bölüm</li>
+                  <li class="bolum-buttons">9. Bölüm</li>
+                  <li class="bolum-buttons">10. Bölüm</li>
+                  <li class="bolum-buttons">11. Bölüm</li>
+                  <li class="bolum-buttons">12. Bölüm</li>
+                  <li class="bolum-buttons">13. Bölüm</li>
+                  <li class="bolum-buttons">14. Bölüm</li>
+                  <li class="bolum-buttons">15. Bölüm</li>
+                  <li class="bolum-buttons">16. Bölüm</li>
+                  <li class="bolum-buttons">17. Bölüm</li>
+                  <li class="bolum-buttons">18. Bölüm</li>
+                  <li class="bolum-buttons">19. Bölüm</li>
+                  <li class="bolum-buttons">20. Bölüm</li>
+                  <li class="bolum-buttons">21. Bölüm</li>
+                  <li class="bolum-buttons">22. Bölüm</li>
+                  <li class="bolum-buttons">23. Bölüm</li>
+                  <li class="bolum-buttons">24. Bölüm</li>
+                </ul>
               </div>
-              <div style="display: flex; justify-content: space-between;">
-                <button class="normal-color bot-buttons">Paylaş</button>
-                <button class="normal-color bot-buttons">Bildir</button>
-              </div>
+
+
+
+
+
+
             </div>
           </div>
         </div>
+
+        <div class="line"></div>
 
         <div class="bot-content">
           <div id="disqus_thread" style="margin-top: 30px;"></div>
@@ -211,6 +295,47 @@
     var uie = document.createElement('script');
     uie.src = './js/episode.js?v=' + timestamp;
     document.head.appendChild(uie);
+  </script>
+
+  <script>
+    const playerDiv = document.getElementById('image-div');
+    const items = document.querySelectorAll('.slider-item');
+
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        console.log(index + 1)
+        playerDiv.scrollLeft = 680 * (index);
+      });
+    });
+
+    const eplayerDiv = document.getElementById('slider-episode');
+    const eitems = document.querySelectorAll('.episode-buttons');
+
+    eitems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        console.log(index + 1)
+        eplayerDiv.scrollLeft = 335 * (index);
+      });
+    });
+
+    document.querySelectorAll('.episode-buttons').forEach(function(element) {
+            element.addEventListener('click', function() {
+                // Önceki kırmızı border'ı kaldır
+                document.querySelectorAll('.episode-buttons').forEach(function(el) {
+                    el.classList.remove('selected-button');
+                });
+                // Tıklanan elemente kırmızı border ekle
+                this.classList.add('selected-button');
+            });
+    });
+
+    document.querySelectorAll('.bolum-buttons').forEach(function(element) {
+            element.addEventListener('click', function() {
+              playerDiv.scrollLeft = 680 * 2;
+              console.log(eplayerDiv)
+            });
+    });
+
   </script>
 </body>
 
