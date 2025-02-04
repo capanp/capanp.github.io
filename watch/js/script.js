@@ -80,7 +80,7 @@ fetch('./data/animes.json?v=' + new Date().getTime())
     const linePopulerList = document.getElementById("populer-added");
     const linePendingList = document.getElementById("pending-added");
 
-    const populerListDivs = document.querySelectorAll('.populerListFirst');
+    const populerListDivs = document.querySelectorAll('.populerListItems');
 
     // Her div'e ilgili içeriği ekle
     populerListDivs.forEach((div, index) => {
@@ -93,9 +93,8 @@ fetch('./data/animes.json?v=' + new Date().getTime())
       img.className = "populerImage";
 
       // <a> etiketi oluştur
-      const link = document.createElement('a');
-      link.id = (index + 1).toString();  // 1'den 6'ya kadar ID atama
-      link.href = episode.video_link;
+      const link = document.createElement('p');
+      link.id = (index).toString();  // 1'den 6'ya kadar ID atama
       link.innerHTML = episode.isim;
       link.className = 'populerListText';
 
@@ -320,15 +319,63 @@ fetch('./data/animes.json?v=' + new Date().getTime())
       contentDiv.appendChild(div);
     });
 
-    const divs = document.querySelectorAll('.populerListFirst');
-    let currentIndex = 1;
+    const divs = document.querySelectorAll('.populerListItems');
+    const progressBar = document.querySelectorAll('.progress-bar');
+    const topPopulerImage = document.querySelectorAll('.populerImage');
 
+    let currentIndex = 1; // currentIndex'i fonksiyon dışında tanımla
+    let intervalId; // Interval ID'sini saklamak için değişken
+
+    divs.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        console.log("clicked");
+    
+        // item üzerinden class kontrolü yap
+        if (item.classList.contains("populerSelected")) {
+          const link_text = document.getElementById(index).textContent;
+          window.location.href = `episode.html?anime=${link_text}`;
+        }
+    
+        currentIndex = index; // Butona tıklandığında başlangıç indeksini güncelle
+        changeColor(); // changeColor fonksiyonunu hemen çağır
+        startInterval(); // Interval'i yeniden başlat (süre sıfırlanır)
+      });
+    });
+    
     function changeColor() {
-      // Tüm div'leri transparent yap
+      console.log(currentIndex);
 
+      progressBar.forEach((item, index) => {
+        console.log(index == currentIndex);
+        if (index == currentIndex) {
+          item.classList.add('progress-bar-visible'); // Class ekle
+          item.style.animation = 'none';
+          item.offsetHeight; // Trigger reflow
+          item.style.animation = null; // Restart animation
+
+          topPopulerImage[currentIndex].style.animation = 'none';
+          topPopulerImage[currentIndex].offsetHeight; // Trigger reflow
+          topPopulerImage[currentIndex].style.animation = null; // Restart animation
+        } else {
+          item.classList.remove('progress-bar-visible'); // Class kaldır
+        }
+      });
+    
+      // Tüm div'leri transparent yap
+      divs.forEach(div => div.classList.remove('populerSelected'));
+    
+      // Sıradaki div'in rengini değiştir
+      divs[currentIndex].classList.add('populerSelected');
+    
+      // Diğer işlemler (örneğin, metin ve resim güncelleme)
+      name.innerText = latestEpisodes[currentIndex].isim;
+      des.innerText = latestEpisodes[currentIndex].aciklama;
+      image.src = latestEpisodes[currentIndex].image;
+    
+      // Arkaplan rengini ayarla
       getDominantColor(latestEpisodes[currentIndex].image, function (color, error) {
         const bgContent = document.getElementById('wrap');
-
+    
         if (error) {
           console.error(error);
           bgContent.style.backgroundImage = `linear-gradient(0deg, rgba(32, 32, 36, 0.3) 0%, rgba(32, 32, 36, 0.3) 70%, rgba(32, 32, 36, 0.3) 100%)`;
@@ -336,21 +383,19 @@ fetch('./data/animes.json?v=' + new Date().getTime())
           bgContent.style.backgroundImage = `linear-gradient(0deg, rgba(32, 32, 36, 0.3) 0%, rgba(32, 32, 36, 0.3) 70%, ${color} 100%)`;
         }
       });
-
-      divs.forEach(div => div.style.backgroundColor = 'transparent');
-
-      // Sıradaki div'i #28282c yap
-      divs[currentIndex].style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-      name.innerText = latestEpisodes[currentIndex].isim;
-      des.innerText = latestEpisodes[currentIndex].aciklama;
-      image.src = latestEpisodes[currentIndex].image;
-
+    
       // Bir sonraki index'e geç (döngü sağlamak için mod al)
       currentIndex = (currentIndex + 1) % divs.length;
     }
 
     // Her 3 saniyede bir changeColor fonksiyonunu çağır
-    setInterval(changeColor, 5000);
+    function startInterval() {
+      clearInterval(intervalId); // Önce mevcut interval'i temizle
+      intervalId = setInterval(changeColor, 5000); // Yeni interval başlat
+    }
+    
+    // Sayfa yüklendiğinde interval'i başlat
+    startInterval();
 
 
     // Son eklenen animeleri listele

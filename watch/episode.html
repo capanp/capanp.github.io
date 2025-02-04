@@ -88,17 +88,13 @@
           <div class="player-div">
             <div id="image-div" class="image-div">
               <div class="player-items">
-                <img width="680" height="380"
-                  src="https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg"
-                  alt="uie">
+                <iframe width="680" height="380" src="https://www.youtube.com/embed/-G9BqkgZXRA?si=agIfcC6VZzdZVb_W"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div class="player-items">
-                <iframe width="680" height="380" src="https://www.youtube.com/embed/-G9BqkgZXRA?si=agIfcC6VZzdZVb_W"
-                  title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                  <iframe width="680" height="380" src="https://video.sibnet.ru/shell.php?videoid=3642169"
+                <iframe width="680" height="380" src="https://video.sibnet.ru/shell.php?videoid=3642169"
                   title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -108,19 +104,12 @@
 
 
 
-            <div class="image-contents-div">
-              <img class="bot-img slider-item selected"
-                src="https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg"
-                alt="uie">
-              <div class="bot-img video slider-item">
-                <img class="bot-img" style="margin: 0;"
-                  src="https://m.media-amazon.com/images/S/pv-target-images/37ae6eaf1e35049384801438c20a4dec3aa06593542c9770c83935d6b84a3e59.jpg"
-                  alt="uie">
-                <svg class="playIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                  class="bi bi-play-fill" viewBox="0 0 16 16">
-                  <path
-                    d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
-                </svg>
+            <div class="bot-episode-div">
+              <div class="bot-episode slider-item bot-selected">
+                <p class="episode-text">Fragman</p>
+              </div>
+              <div class="bot-episode slider-item">
+                <p class="episode-text">Bölüm 1</p>
               </div>
             </div>
 
@@ -303,8 +292,13 @@
 
     items.forEach((item, index) => {
       item.addEventListener('click', () => {
+        items.forEach(function (elmnt) {
+          elmnt.classList.remove('bot-selected');
+        });
+
         console.log(index + 1)
         playerDiv.scrollLeft = 680 * (index);
+        items[index].classList.add('bot-selected');
       });
     });
 
@@ -318,22 +312,22 @@
       });
     });
 
-    document.querySelectorAll('.episode-buttons').forEach(function(element) {
-            element.addEventListener('click', function() {
-                // Önceki kırmızı border'ı kaldır
-                document.querySelectorAll('.episode-buttons').forEach(function(el) {
-                    el.classList.remove('selected-button');
-                });
-                // Tıklanan elemente kırmızı border ekle
-                this.classList.add('selected-button');
-            });
+    eitems.forEach(function (element) {
+      element.addEventListener('click', function () {
+        // Önceki kırmızı border'ı kaldır
+        eitems.forEach(function (elmnt) {
+          elmnt.classList.remove('selected-button');
+        });
+        // Tıklanan elemente kırmızı border ekle
+        this.classList.add('selected-button');
+      });
     });
 
-    document.querySelectorAll('.bolum-buttons').forEach(function(element) {
-            element.addEventListener('click', function() {
-              playerDiv.scrollLeft = 680 * 2;
-              console.log(eplayerDiv)
-            });
+    document.querySelectorAll('.bolum-buttons').forEach(function (element) {
+      element.addEventListener('click', function () {
+        playerDiv.scrollLeft = 680 * 2;
+        console.log(eplayerDiv)
+      });
     });
 
   </script>

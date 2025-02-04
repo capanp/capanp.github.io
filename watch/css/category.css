@@ -3,7 +3,7 @@ body {
 }
 
 .puans {
-    margin: 0 0 10px 5px
+    margin: 0 0 30px 5px
 }
 
 .episodeName {
@@ -18,14 +18,19 @@ body {
 
 .player-div {
     width: 680px;
-    margin-right: 58px;
+    margin-right: 18px;
 }
 
 .episode-div {
     width: 322px;
+    max-height: 415px;
     font-size: 14px;
     margin-right: 10px;
+    background-color: #171719;
     color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .image-div {
@@ -42,37 +47,45 @@ body {
     flex-shrink: 0 !important;
     min-width: 680px;
     min-height: 380px;
+    background: linear-gradient(0deg, rgb(30 30 33) 0%, rgb(37 37 40) 100%);
 }
 
 .image-div img {
     object-fit: cover;
 }
 
-.image-contents-div {
+.bot-episode-div {
     margin-top: 15px;
     display: flex;
     width: 680px;
     height: 60px;
 }
 
-.image-contents-div .bot-img {
+.bot-episode {
+    display: flex;
     width: 100px;
     height: 60px;
     margin-left: 15px;
     border-radius: 4px;
     opacity: 0.5;
     border: 0;
+
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+
     transition: all 0.3 ease;
     object-fit: cover;
+    background: linear-gradient(0deg, rgb(30 30 33) 0%, rgb(37 37 40) 100%);
     cursor: pointer;
 }
 
-.image-contents-div .bot-img:hover {
-    opacity: 0.9;
+.bot-episode:hover {
+    opacity: 1;
 }
 
-.video {
-    position: relative;
+.bot-selected {
+    opacity: 1;
 }
 
 .playIcon {
@@ -193,6 +206,12 @@ iframe {
     border-bottom: 2px solid rgb(240, 240, 240) !important;
 }
 
+.episode-text {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
 .episode-button-container {
     width: 100%;
     display: flex;
@@ -206,11 +225,15 @@ iframe {
     scroll-behavior: smooth;
 }
 
+.border {
+    max-height: 388px;
+}
+
 .border2 {
     margin-top: 15px;
+    max-height: 373px;
     min-width: 320px !important;
     width: 320px;
-    height: 455px;
     overflow-y: auto;
 }
 

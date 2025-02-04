@@ -136,27 +136,64 @@ a {
 
 .populerImage {
   width: 40px;
-  border-radius: 8px;
+  border-radius: 4px;
   height: 50px;
   object-fit: cover;
   opacity: 0.5;
+  animation: change-image 0.2s linear forwards;
+  z-index: 1;
 }
 
-.populerListFirst {
+.progress-bar-visible {
+  display: block !important;
+}
+
+.populerListBox {
+  margin: 10px 0 0 10px !important;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
   height: 68px;
-  border-radius: 10px;
+  background-color: #404044;
+  animation: progress 5s linear forwards;
+  transition: all ease 0.5s;
+}
+
+.populerListItems {
+  height: 68px;
   display: flex;
   overflow: hidden;
   /* Flexbox eklenmeli */
-  padding-left: 10px;
+  padding: 0 10px;
   /* Yatayda ortalama */
   align-items: center;
   /* Dikeyde ortalama */
   transition: all ease 0.5s;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.populerListItems:hover {
+  background-color: #28282c;
+}
+
+.populerSelected {
+  background-color: #28282c;
 }
 
 .populerListText {
+  z-index: 1;
   margin-left: 10px;
+  font-size: 14px;
   /* Yazının hizalanması */
 }
 
@@ -169,12 +206,10 @@ a {
   position: relative;
 
   flex-grow: 1;
+  max-width: 868px;
   min-width: 0;
 
-  -webkit-box-shadow: 0px 0px 150px 0px rgba(255, 255, 255, 0.05);
-  -moz-box-shadow: 0px 0px 150px 0px rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 150px 0px rgba(255, 255, 255, 0.05);
-  transition: box-shadow 0.5s ease-in-out, transform 1s ease-in-out;
+  background: linear-gradient(0deg, rgb(30 30 33) 0%, rgb(37 37 40) 100%);
 }
 
 .populerHeader {
@@ -667,13 +702,13 @@ img {
 .card {
   flex-shrink: 0 !important;
   min-width: 160px !important;
-  background-color: transparent;
   height: 230px;
   width: 160px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
+  background: linear-gradient(0deg, rgb(30 30 33) 0%, rgb(37 37 40) 100%);
 }
 
 .topImage {
@@ -732,4 +767,26 @@ img {
   display: flex;
   align-items: center; /* Dikey hizalama */
   gap: 4px;
+}
+
+
+@keyframes progress {
+  from {
+      width: 0;
+  }
+  to {
+      width: 179.5px;
+  }
+}
+
+@keyframes change-image {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
