@@ -2,6 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const animeIsim = urlParams.get('anime');
 //const animeDetailsContainer = document.getElementById("anime-details");
+const animePath = document.getElementById("top-path");
 const animeName = document.getElementById("top-name");
 const animeDescription = document.getElementById("desc");
 const commentCount = document.getElementById("comment-count");
@@ -20,6 +21,9 @@ fetch("data/animes.json")
     console.log(animeIsim)
 
     if (episode) {
+      animePath.innerHTML = `
+      <a href="list.html" class="path">Tüm Animeler</a> / ${episode.isim}
+      `;
       animeName.innerHTML = `${(episode.isim).toUpperCase()}`;
       animeDescription.innerHTML = `${(episode.aciklama)}`;
       console.log(episode)

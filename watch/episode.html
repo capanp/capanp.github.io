@@ -54,6 +54,8 @@
     <main class="content" id="wrap">
       <div class="puanDetails">
         <div class="puans">
+          <p class="path" id="top-path">
+          <p>
           <h2 class="episodeName" id="top-name">Yükleniyor...</h2>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-star-fill"
             viewBox="0 0 16 16">
@@ -83,24 +85,135 @@
           <a id="comment-count" href="./episode.html" style="margin-left: 10px;">Yorumlar</a>
         </div>
 
-        <div class="details"></div>
+        <div class="player-sources">
+          <div class="sources">
+            <button class="normal-color player-buttons" disabled>Kaynak 1</button>
+          </div>
+          <div class="episode-control">
+            <button class="normal-color player-buttons">Önceki Bölüm</button>
+            <button class="normal-color player-buttons">Sonraki Bölüm</button>
+          </div>
+        </div>
         <div class="main-content">
           <div class="player-div">
-            <div id="image-div" class="image-div">
-              <div class="player-items">
-                <iframe width="680" height="380" src="https://www.youtube.com/embed/-G9BqkgZXRA?si=agIfcC6VZzdZVb_W"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-              <div class="player-items">
-                <iframe width="680" height="380" src="https://video.sibnet.ru/shell.php?videoid=3642169"
-                  title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="player-top-contents">
+
+              <div id="image-div" class="image-div">
+                <div class="player-items">
+                  <iframe width="680" height="420" src="https://www.youtube.com/embed/-G9BqkgZXRA?si=agIfcC6VZzdZVb_W"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="player-items">
+                  <iframe width="680" height="420" src="https://video.sibnet.ru/shell.php?videoid=3642169"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                </div>
               </div>
+
+
+              <div class="episode-div">
+                <ul class="episode-button-container">
+                  <li class="episode-buttons selected-button">Detaylar</li>
+                  <li id="start" class="episode-buttons">Bölümler</li>
+                </ul>
+                <div id="slider-episode" class="slider-episode" style="overflow: hidden;">
+                  <div class="border">
+                    <p style="text-indent: 3px; font-size: 14px; margin-top: 15px;">Türler</p>
+                    <div class="tur-container">
+                      <p class="tur-text">Aksiyon</p>
+                      <p class="tur-text">Romantizm</p>
+                      <p class="tur-text">Seinen</p>
+                      <p class="tur-text">Shounen</p>
+                      <p class="tur-text">Shounen</p>
+                      <p class="tur-text">Shounen</p>
+                      <p class="tur-text">Shounen</p>
+                    </div>
+                    <button class="watch button" onclick="document.getElementById('start').click()">Şimdi İzle</button>
+                    <button class="normal-color button">Listeme Ekle</button>
+                    <div class="details" style="margin-top: 10px;">
+                      <div class="detail-row">
+                        <p class="detail-text">Yapımcı Stüdyo</p>
+                        <p class="detail-text" style="color: white;">Square Enix</p>
+                      </div>
+                      <div class="detail-row">
+                        <p class="detail-text">Yapım Yılı</p>
+                        <p class="detail-text" style="color: white;">2020</p>
+                      </div>
+                      <div style="display: flex; justify-content: space-between;">
+                        <button class="normal-color bot-buttons"
+                          onclick="navigator.clipboard.writeText(window.location.href)">Paylaş</button>
+                        <button class="normal-color bot-buttons">Bildir</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border2" style="padding-left: 13px;">
+                    <ul class="bolumler">
+                      <li class="bolum-buttons">1. Bölüm</li>
+                      <li class="bolum-buttons">2. Bölüm</li>
+                      <li class="bolum-buttons">3. Bölüm</li>
+                      <li class="bolum-buttons">4. Bölüm</li>
+                      <li class="bolum-buttons">5. Bölüm</li>
+                      <li class="bolum-buttons">6. Bölüm</li>
+                      <li class="bolum-buttons">7. Bölüm</li>
+                      <li class="bolum-buttons">8. Bölüm</li>
+                      <li class="bolum-buttons">9. Bölüm</li>
+                      <li class="bolum-buttons">10. Bölüm</li>
+                      <li class="bolum-buttons">11. Bölüm</li>
+                      <li class="bolum-buttons">12. Bölüm</li>
+                      <li class="bolum-buttons">13. Bölüm</li>
+                      <li class="bolum-buttons">14. Bölüm</li>
+                      <li class="bolum-buttons">15. Bölüm</li>
+                      <li class="bolum-buttons">16. Bölüm</li>
+                      <li class="bolum-buttons">17. Bölüm</li>
+                      <li class="bolum-buttons">18. Bölüm</li>
+                      <li class="bolum-buttons">19. Bölüm</li>
+                      <li class="bolum-buttons">20. Bölüm</li>
+                      <li class="bolum-buttons">21. Bölüm</li>
+                      <li class="bolum-buttons">22. Bölüm</li>
+                      <li class="bolum-buttons">23. Bölüm</li>
+                      <li class="bolum-buttons">24. Bölüm</li>
+                    </ul>
+                  </div>
+
+
+
+
+
+
+                </div>
+              </div>
+
             </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -117,78 +230,6 @@
             <p class="bot-header" style="text-indent: 3px; font-size: 14px;">Açıklama</p>
             <div class="description-div">
               <p class="desc" id="desc">Yükleniyor...</p>
-            </div>
-          </div>
-          <div class="episode-div">
-            <ul class="episode-button-container">
-              <li class="episode-buttons selected-button">Detaylar</li>
-              <li id="start" class="episode-buttons">Bölümler</li>
-            </ul>
-            <div id="slider-episode" class="slider-episode" style="overflow: hidden;">
-              <div class="border">
-                <p style="text-indent: 3px; font-size: 14px; margin-top: 15px;">Türler</p>
-                <div class="tur-container">
-                  <p class="tur-text">Aksiyon</p>
-                  <p class="tur-text">Romantizm</p>
-                  <p class="tur-text">Seinen</p>
-                  <p class="tur-text">Shounen</p>
-                  <p class="tur-text">Shounen</p>
-                  <p class="tur-text">Shounen</p>
-                  <p class="tur-text">Shounen</p>
-                </div>
-                <button class="watch button" onclick="document.getElementById('start').click()">Şimdi İzle</button>
-                <button class="normal-color button">Listeme Ekle</button>
-                <div class="details" style="margin-top: 10px;">
-                  <div class="detail-row">
-                    <p class="detail-text">Yapımcı Stüdyo</p>
-                    <p class="detail-text" style="color: white;">Square Enix</p>
-                  </div>
-                  <div class="detail-row">
-                    <p class="detail-text">Yapım Yılı</p>
-                    <p class="detail-text" style="color: white;">2020</p>
-                  </div>
-                  <div style="display: flex; justify-content: space-between;">
-                    <button class="normal-color bot-buttons"
-                      onclick="navigator.clipboard.writeText(window.location.href)">Paylaş</button>
-                    <button class="normal-color bot-buttons">Bildir</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="border2" style="padding-left: 13px;">
-                <ul class="bolumler">
-                  <li class="bolum-buttons">1. Bölüm</li>
-                  <li class="bolum-buttons">2. Bölüm</li>
-                  <li class="bolum-buttons">3. Bölüm</li>
-                  <li class="bolum-buttons">4. Bölüm</li>
-                  <li class="bolum-buttons">5. Bölüm</li>
-                  <li class="bolum-buttons">6. Bölüm</li>
-                  <li class="bolum-buttons">7. Bölüm</li>
-                  <li class="bolum-buttons">8. Bölüm</li>
-                  <li class="bolum-buttons">9. Bölüm</li>
-                  <li class="bolum-buttons">10. Bölüm</li>
-                  <li class="bolum-buttons">11. Bölüm</li>
-                  <li class="bolum-buttons">12. Bölüm</li>
-                  <li class="bolum-buttons">13. Bölüm</li>
-                  <li class="bolum-buttons">14. Bölüm</li>
-                  <li class="bolum-buttons">15. Bölüm</li>
-                  <li class="bolum-buttons">16. Bölüm</li>
-                  <li class="bolum-buttons">17. Bölüm</li>
-                  <li class="bolum-buttons">18. Bölüm</li>
-                  <li class="bolum-buttons">19. Bölüm</li>
-                  <li class="bolum-buttons">20. Bölüm</li>
-                  <li class="bolum-buttons">21. Bölüm</li>
-                  <li class="bolum-buttons">22. Bölüm</li>
-                  <li class="bolum-buttons">23. Bölüm</li>
-                  <li class="bolum-buttons">24. Bölüm</li>
-                </ul>
-              </div>
-
-
-
-
-
-
             </div>
           </div>
         </div>
