@@ -5,9 +5,9 @@ let botScore = 0; // Botun skoru
 function startGame() {
     console.log("Oyun Başlatıldı.");
     $("#start-game-button").css("display", "none");
-    $('#main-table').children('div').removeClass().addClass('empty card');
-    $('#opponent-table').children('div').removeClass().addClass('empty card');
-    $('#character-table').children('div').removeClass().addClass('empty card');
+    $('#main-cards').children('div').removeClass().addClass('empty card');
+    $('#opponent-hands').children('div').removeClass().addClass('empty card');
+    $('#character-hands').children('div').removeClass().addClass('empty card');
 
     let cardList = ["red", "green", "blue", "black"];
 
@@ -21,7 +21,7 @@ function startGame() {
 }
 
 function selectCard(element) {
-    let cards = $('#character-table').children('div');
+    let cards = $('#character-hands').children('div');
     let first = $(cards[0]).attr("class").split(" ");
     let second = $(cards[1]).attr("class").split(" ");
     let third = $(cards[2]).attr("class").split(" ");
@@ -48,7 +48,7 @@ function selectCard(element) {
 }
 
 function scoreCards() {
-    let selectedCards = $("#main-table .selected");
+    let selectedCards = $("#main-cards .selected");
 
     if (selectedCards.length === 3) {
         let colors = [];
@@ -61,7 +61,7 @@ function scoreCards() {
         let score = calculateScore(colors);
         app.score += score;
 
-        alert("Toplam Puan: " + score);
+        console.log("Toplam Puan: " + score);
         
         // "Kartları Tut" butonunu gizle
         $("#score-button").css("display", "none");
@@ -70,7 +70,7 @@ function scoreCards() {
         resetMainTable();
         startBotTurn();
     } else {
-        alert("Lütfen 3 kart seçin!");
+        console.log("Lütfen 3 kart seçin!");
     }
 }
 
@@ -86,8 +86,8 @@ function removeCard(element) {
     // Kartı boş hale getir
     $(element).removeClass().addClass("empty card");
 
-    // Aynı renkteki **ilk** seçili kartı main-table içinden temizle
-    $("#main-table .selected").each(function () {
+    // Aynı renkteki **ilk** seçili kartı main-cards içinden temizle
+    $("#main-cards .selected").each(function () {
         if ($(this).hasClass(removedColor)) {
             $(this).removeClass("selected");
             return false; // İlk bulunanı temizleyip döngüden çık
@@ -99,18 +99,18 @@ function removeCard(element) {
 
 function resetMainTable() {
     // Ana masa üzerindeki seçili kartları temizle
-    let selectedCards = $("#main-table .card");
+    let selectedCards = $("#main-cards .card");
     selectedCards.removeClass("selected").removeClass().addClass("empty card");
 
     // Karakter kartlarını da sıfırla (yani sil)
-    let characterCards = $("#character-table .card");
+    let characterCards = $("#character-hands .card");
     characterCards.removeClass().addClass("empty card");
 
-    // main-table'deki kartları sıfırla ve yenileriyle değiştir
+    // main-cards'deki kartları sıfırla ve yenileriyle değiştir
     let colors = ["red", "green", "blue", "black"];
     
-    // main-table'deki boş kartlara rastgele kart ekle
-    $("#main-table .empty.card").each(function () {
+    // main-cards'deki boş kartlara rastgele kart ekle
+    $("#main-cards .empty.card").each(function () {
         let randomColor = colors[Math.floor(Math.random() * colors.length)];
         $(this).removeClass("empty card").addClass(randomColor + " card");
     });
@@ -142,7 +142,7 @@ function startBotTurn() {
 }
 
 function botPlay() {
-    let mainTableCards = $('#main-table').children('div');
+    let mainTableCards = $('#main-cards').children('div');
     let availableCards = [];
 
     // Masadaki tüm kartları diziye ekle
@@ -191,7 +191,7 @@ function botPlay() {
 
     resetMainTable();
 
-    alert("Bot toplam " + botScoreGain + " puan kazandı!");
+    console.log("Bot toplam " + botScoreGain + " puan kazandı!");
     $("#score-button").css("display", "flex");
 }
 

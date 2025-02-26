@@ -25,18 +25,17 @@ a {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Yatayda ortalama */
+    justify-content: center; /* Dikeyde ortalama */
 }
 
 .main {
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #11111190;
+    max-width: 1000px;
+    margin: 20px 0 20px 0;
     box-shadow: 0px 0px 30px #00000050;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    border-left: 2px solid rgb(40, 40, 40);
     transition: all ease 0.3s;
 }
 
@@ -48,18 +47,25 @@ a {
 }
 
 .text {
-    border-radius: 5px;
-    border: 1px solid #11111190;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
-    padding: 10px;
     margin: 10px;
 }
 
 .opponent-table {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.38) 3.07%, rgba(6, 37, 65, 0.35) 88.06%);
+    box-shadow: 0px 0px 50px #000;
+    border-left: 2px solid #ffffff10;
+}
+
+.opponent-hands {
     display: flex;
 }
 
 .main-table {
+    display: flex;
+    justify-content: center;
+}
+
+.main-cards {
     display: flex;
     justify-content: center;
 }
@@ -71,8 +77,90 @@ a {
     justify-content: center;
 }
 
+.main-content {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.38) 3.07%, rgba(6, 37, 65, 0.35) 88.06%);
+    box-shadow: 0px 0px 50px #000;
+    border-left: 2px solid #ffffff10;
+}
+
 .character-table {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.38) 3.07%, rgba(6, 37, 65, 0.35) 88.06%);
+    box-shadow: 0px 0px 50px #000;
+    border-left: 2px solid #ffffff10;
+}
+
+.character-hands {
     display: flex;
+}
+
+.title {
+    background: linear-gradient(to right, #28405397, rgba(131, 51, 18, 0) 60%);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+}
+
+.top-title {
+    background: linear-gradient(to right, #833312FF, #83331200);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+}
+
+.main-title {
+    background: linear-gradient(to right, hsla(207, 0%, 24%, 0.592), rgba(131, 51, 18, 0) 60%);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+}
+
+.score-title {
+    background: linear-gradient(to right, #29493A, #83331200);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+}
+
+.hp-table {
+    width: 100%;
+    max-width: 1000px;
+    background: linear-gradient(to right, #83331200, #833312FF);
+    border-left: 2px solid #7f3119;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0px 0px 5px #000;
+    box-shadow: 0px 0px 30px #000;
+}
+
+.score-table {
+    width: 100%;
+    max-width: 1000px;
+    background: linear-gradient(to right, #83331200, #29493A);
+    border-left: 2px solid #29493A;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0px 0px 5px #000;
+    box-shadow: 0px 0px 30px #000;
 }
 
 .button-table {
@@ -95,16 +183,30 @@ a {
     transition: all 0.3s ease;
 }
 
+.button-text {
+    font-family: "Noto Sans", 'Segoe UI', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) skewX(-10deg); /* Metni doğru hizalamak için ters kaydırma */
+    text-align: center;
+}
+
 .start-button {
+    position: relative;
+    transform: skewX(10deg);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto 0 auto 30px;
     width: 100px;
     height: 100px;
-    border: 0;
-    background-color: #7f7f7f;
-    color: #333b40;
+    background-color: #3b3b3b;
+    border: 1px solid #7f7f7f;
+    color: rgb(170, 170, 170);
     user-select: none;
     cursor: pointer;
     border-radius: 5px;
@@ -113,22 +215,34 @@ a {
 
 .red {
     background-color: red;
+    background-image: url(../images/kırmızı-kart.png);
+    background-size: cover; /* Resmi div'in boyutlarına göre sığdır */
+    background-position: center;
 }
 
 .green {
     background-color: green;
+    background-image: url(../images/yeşil-kart.png);
+    background-size: cover; /* Resmi div'in boyutlarına göre sığdır */
+    background-position: center;
 }
 
 .blue {
     background-color: blue;
+    background-image: url(../images/mavi-kart.png);
+    background-size: cover; /* Resmi div'in boyutlarına göre sığdır */
+    background-position: center;
 }
 
 .black {
     background-color: black;
+    background-image: url(../images/siyah-kart.png);
+    background-size: cover; /* Resmi div'in boyutlarına göre sığdır */
+    background-position: center;
 }
 
 .selected {
-    border: 3px solid rgb(255, 200, 0) !important;
+    border: 3px solid #ffd000 !important;
 }
 
 .empty {
@@ -136,8 +250,8 @@ a {
 }
 
 .card {
-    width: 150px;
-    height: 200px;
+    width: 125px;
+    height: 175px;
     border-radius: 5px;
     border: 1px solid #11111190;
     margin: 0 10px;
@@ -149,9 +263,41 @@ a {
     text-align: center;
     background-color: black;
     color: #777;
+    user-select: none;
 }
 
 .footer-space {
     margin: 0 auto;
     text-align: center;
+}
+
+
+
+
+
+
+
+.opponent-image {
+    position: relative;
+    width: 200px; /* Görsel boyutunu ayarla */
+    height: 200px;
+    margin: auto 20px auto 0;
+}
+
+.opponent-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.blink {
+    opacity: 0;
+    animation: blink-animation 5s infinite;
+}
+
+@keyframes blink-animation {
+    0%, 97% { opacity: 0; }
+    98%, 99% { opacity: 1; }
+    100% { opacity: 0; }
 }

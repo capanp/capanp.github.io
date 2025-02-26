@@ -29,45 +29,67 @@
 
 <body>
     <div class="wrap">
+        <div class="hp-table">
+            <div class="top-title">Baskınlık</div>
+            uieuieuieiueiue
+        </div>
+
         <div class="main">
+            <div class="main-title">Oyun Alanı</div>
             <div class="opponent">
-                <img src="./images/bat-rider1.png" style="margin: auto 0;" height="200px" width="200px" alt="">
+                <div class="opponent-image">
+                    <img src="./images/bat-rider1.png" alt="Düz duran karakter" class="normal" style="margin: auto 0;" height="200px" width="200px">
+                    <img src="./images/bat-rider2.png" alt="Göz kırpan karakter" class="blink" style="margin: auto 0;" height="200px" width="200px">
+                </div>
                 <div class="oppenent-content">
-                    <div class="text">Hadi kartları dağıt!</div>
                     <div class="opponent-table" id="opponent-table">
-                        <div class="red card" id="opponent-card1"></div>
-                        <div class="green card" id="opponent-card2"></div>
-                        <div class="blue card" id="opponent-card3"></div>
+                        <div class="title">Bay Yarasa'nın Eli</div>
+                        <div class="text">Hadi kartları dağıt da görelim kim neyin nesiymiş!</div>
+                        <div class="opponent-hands" id="opponent-hands">
+                            <div class="red card" id="opponent-card1"></div>
+                            <div class="green card" id="opponent-card2"></div>
+                            <div class="blue card" id="opponent-card3"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="main-table" id="main-table">
-                <div class="empty card" id="main-card1" onclick="selectCard(this)"></div>
-                <div class="empty card" id="main-card2" onclick="selectCard(this)"></div>
-                <div class="empty card" id="main-card3" onclick="selectCard(this)"></div>
-                <div class="empty card" id="main-card4" onclick="selectCard(this)"></div>
+                <div class="main-content">
+                    <div class="title">Masadaki Kartlar</div>
+                    <div class="main-cards" id="main-cards">
+                        <div class="empty card" id="main-card1" onclick="selectCard(this)"></div>
+                        <div class="empty card" id="main-card2" onclick="selectCard(this)"></div>
+                        <div class="empty card" id="main-card3" onclick="selectCard(this)"></div>
+                        <div class="empty card" id="main-card4" onclick="selectCard(this)"></div>
+                    </div>
+                </div>
                 <button class="start-button" id="start-game-button" onclick="startGame()">
-                    <p style="text-align: center;">Kartları Dağıt!</p>
+                    <p class="button-text">Kartları Dağıt</p>
                 </button>
             </div>
 
             <div class="character">
                 <div class="button-table">
-                    <button class="score-button" id="score-button" onclick="scoreCards()">
-                        <p style="text-align: center;">Kartları Tut</p>
+                    <button class="start-button" style="transform: skewX(-10deg) !important; margin: 0 30px 0 0;" id="score-button" onclick="scoreCards()">
+                        <p class="button-text" style="transform: translate(-50%, -50%) skewX(10deg) !important;">Kartları Tut</p>
                     </button>
                 </div>
-                <div class="character-table" id="character-table">
-                    <div class="red card" id="character-card1" onclick="removeCard(this)"></div>
-                    <div class="green card" id="character-card2" onclick="removeCard(this)"></div>
-                    <div class="blue card" id="character-card3" onclick="removeCard(this)"></div>
+                <div class="character-table">
+                    <div class="title">Senin Elin</div>
+                    <div class="character-hands" id="character-hands">
+                        <div class="red card" id="character-card1" onclick="removeCard(this)"></div>
+                        <div class="green card" id="character-card2" onclick="removeCard(this)"></div>
+                        <div class="blue card" id="character-card3" onclick="removeCard(this)"></div>
+                    </div>
                 </div>
             </div>
+        </div>
 
+        <div class="score-table">
+            <div class="score-title">Toplam Skorun</div>
             <div id="app">
                 <h2>Skor: {{ score }}</h2>
             </div>
-
         </div>
     </div>
 
