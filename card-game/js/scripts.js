@@ -45,10 +45,24 @@ function selectChoice(element) {
         button1.text("**OYUNU AÇIKLA**");
         button2.css('display', 'none');
     }
+
+    if(choice == "**OYUNU AÇIKLA**") {
+        showTutorial();
+
+        $('.talk').css("display", "none");
+
+        $('.hp-table').css("display", "block");
+        $('.main').css("display", "block");
+        $('.score-table').css("display", "block");
+    }
 }
 
-function tutorial() {
+function showTutorial() {
     $("#tutorial-area").css('display', 'block');
+}
+
+function hideTutorial() {
+    $("#tutorial-area").css('display', 'none');
 }
 
 let botScore = 0; // Botun skoru
