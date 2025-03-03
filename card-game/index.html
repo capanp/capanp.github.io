@@ -55,24 +55,23 @@
             </div>
             <div class="main-table" id="main-table">
                 <div class="main-content">
-                    <div class="title">Masadaki Kartlar</div>
-                    <div class="main-cards" id="main-cards">
-                        <div class="empty card" id="main-card1" onclick="selectCard(this)"></div>
-                        <div class="empty card" id="main-card2" onclick="selectCard(this)"></div>
-                        <div class="empty card" id="main-card3" onclick="selectCard(this)"></div>
-                        <div class="empty card" id="main-card4" onclick="selectCard(this)"></div>
+                    <div>
+                        <div class="title">Masadaki Kartlar</div>
+                        <div class="main-cards" id="main-cards">
+                            <div class="empty card" id="main-card1" onclick="selectCard(this)"></div>
+                            <div class="empty card" id="main-card2" onclick="selectCard(this)"></div>
+                            <div class="empty card" id="main-card3" onclick="selectCard(this)"></div>
+                            <div class="empty card" id="main-card4" onclick="selectCard(this)"></div>
+                        </div>
                     </div>
+                    <button class="start-button" id="start-game-button" onclick="startGame()">Kartları Dağıt</button>
                 </div>
-                <button class="start-button" id="start-game-button" onclick="startGame()">
-                    <p class="button-text">Kartları Dağıt</p>
                 </button>
             </div>
 
             <div class="character">
                 <div class="button-table">
-                    <button class="start-button" style="transform: skewX(-10deg) !important; margin: 0 30px 0 0;" id="score-button" onclick="scoreCards()">
-                        <p class="button-text" style="transform: translate(-50%, -50%) skewX(10deg) !important;">Kartları Tut</p>
-                    </button>
+                    <button style="height: 100px; width: 140px;" class="start-button" id="score-button" onclick="scoreCards()">Kartları Tut</button>
                 </div>
                 <div class="character-table">
                     <div class="title">Senin Elin</div>
