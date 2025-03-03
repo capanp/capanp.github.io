@@ -1,5 +1,56 @@
 console.log("uie")
 
+if(localStorage.getItem('tutorial') == 1) {
+    $('.talk').css("display", "none");
+} else {
+    $('.hp-table').css("display", "none");
+    $('.main').css("display", "none");
+    $('.score-table').css("display", "none");
+
+    $('.talk').css("display", "flex");
+}
+
+function selectChoice(element) {
+    let choice = $(element).text();
+    let talk = $('#talk-area');
+    let button1 = $("#talk-button1");
+    let button2 = $("#talk-button2");
+
+    if(choice == "Ben mi?") {
+        talk.text("Evet sen, benim çöplüğümde ne arıyorsun?");
+
+        button1.text("Hiçbir şey?");
+        button2.text("...");
+    } else if (choice == "..?") {
+        talk.text("Benim çöplüğümde ne arıyorsun?");
+
+        button1.text("Hiçbir şey?");
+        button2.text("...");
+    }
+
+    if(choice == "Hiçbir şey?") {
+        talk.text("Öyleyse kart oynamaya ne dersin?");
+
+        button1.text("Olur.");
+        button2.text("Nasıl oynanır bilmiyorum.");
+    } else if (choice == "...") {
+        talk.text("Kart oynamaya ne dersin?");
+
+        button1.text("Olur.");
+        button2.text("Nasıl oynanır bilmiyorum.");
+    }
+
+    if(choice == "Olur." || choice == "Nasıl oynanır bilmiyorum.") {
+        talk.text("Kurallar basit ben kazanırsam çöplüğümü terk edersin, sen kazanırsan devam ederiz.");
+        button1.text("**OYUNU AÇIKLA**");
+        button2.css('display', 'none');
+    }
+}
+
+function tutorial() {
+    $("#tutorial-area").css('display', 'block');
+}
+
 let botScore = 0; // Botun skoru
 
 function startGame() {
