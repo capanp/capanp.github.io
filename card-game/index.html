@@ -28,11 +28,14 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <button style="border-radius: 50%; padding: 15px !important;" class="start-button tutorial-button" onclick="showTutorial()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-question" viewBox="0 0 16 16">
-                <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
-              </svg>
+    <div class="wrap" id="app">
+        <button style="border-radius: 50%; padding: 15px !important;" class="start-button tutorial-button"
+            onclick="showTutorial()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-question"
+                viewBox="0 0 16 16">
+                <path
+                    d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94" />
+            </svg>
         </button>
 
         <div class="tutorial-area" id="tutorial-area" style="display: none;">
@@ -82,8 +85,10 @@
 
         <div class="talk" style="display: none;">
             <div class="opponent-image">
-                <img src="./images/bat-rider1.png" alt="Düz duran karakter" class="normal" style="margin: auto 0;" height="200px" width="200px">
-                <img src="./images/bat-rider2.png" alt="Göz kırpan karakter" class="blink" style="margin: auto 0;" height="200px" width="200px">
+                <img src="./images/bat-rider1.png" alt="Düz duran karakter" class="normal" style="margin: auto 0;"
+                    height="200px" width="200px">
+                <img src="./images/bat-rider2.png" alt="Göz kırpan karakter" class="blink" style="margin: auto 0;"
+                    height="200px" width="200px">
             </div>
             <div class="talk-content">
                 <div class="talk-table">
@@ -97,22 +102,32 @@
 
         <div class="hp-table">
             <div class="top-title">Baskınlık</div>
+            <div class="all-hp">
+                <div style="height: 100%; width: 50%; display: flex; justify-content: right;">
+                    <div class="opponent-hp" :style="{ width: opponentHpHeight }"></div>
+                </div>
+                <div style="height: 100%; width: 50%; display: flex; justify-content: left;">
+                    <div class="character-hp" :style="{ width: characterHpHeight }"></div>
+                </div>
+            </div>
         </div>
         <div class="main">
             <div class="main-title">Oyun Alanı</div>
             <div class="opponent">
                 <div class="opponent-image">
-                    <img src="./images/bat-rider1.png" alt="Düz duran karakter" class="normal" style="margin: auto 0;" height="200px" width="200px">
-                    <img src="./images/bat-rider2.png" alt="Göz kırpan karakter" class="blink" style="margin: auto 0;" height="200px" width="200px">
+                    <img src="./images/bat-rider1.png" alt="Düz duran karakter" class="normal" style="margin: auto 0;"
+                        height="200px" width="200px">
+                    <img src="./images/bat-rider2.png" alt="Göz kırpan karakter" class="blink" style="margin: auto 0;"
+                        height="200px" width="200px">
                 </div>
                 <div class="oppenent-content">
                     <div class="opponent-table" id="opponent-table">
                         <div class="title">Bay Yarasa'nın Eli</div>
                         <div class="text">Hadi kartları dağıt da görelim kim neyin nesiymiş!</div>
                         <div class="opponent-hands" id="opponent-hands">
-                            <div class="red card" id="opponent-card1"></div>
-                            <div class="green card" id="opponent-card2"></div>
-                            <div class="blue card" id="opponent-card3"></div>
+                            <div class="empty card" id="opponent-card1"></div>
+                            <div class="empty card" id="opponent-card2"></div>
+                            <div class="empty card" id="opponent-card3"></div>
                         </div>
                     </div>
                 </div>
@@ -135,14 +150,15 @@
 
             <div class="character">
                 <div class="button-table">
-                    <button class="start-button give-button" id="score-button" onclick="scoreCards()">Kartları Tut</button>
+                    <button class="start-button give-button" id="score-button" onclick="scoreCards()">Kartları
+                        Tut</button>
                 </div>
                 <div class="character-table">
                     <div class="title">Senin Elin</div>
                     <div class="character-hands" id="character-hands">
-                        <div class="red card" id="character-card1" onclick="removeCard(this)"></div>
-                        <div class="green card" id="character-card2" onclick="removeCard(this)"></div>
-                        <div class="blue card" id="character-card3" onclick="removeCard(this)"></div>
+                        <div class="empty card" id="character-card1" onclick="removeCard(this)"></div>
+                        <div class="empty card" id="character-card2" onclick="removeCard(this)"></div>
+                        <div class="empty card" id="character-card3" onclick="removeCard(this)"></div>
                     </div>
                 </div>
             </div>
@@ -150,7 +166,7 @@
 
         <div class="score-table">
             <div class="score-title">Toplam Skorun</div>
-            <div id="app">
+            <div>
                 <h2>Skor: {{ score }}</h2>
             </div>
         </div>
@@ -198,12 +214,34 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    score: 0
+                    score: 0,
+                    hp:0
                 };
+            },
+            computed: {
+                characterHpHeight() {
+                    if(this.hp >=1000) {
+                        finishGame("c");
+                    } else if (this.hp >= 0) {
+                        return `${(this.hp / 1000) * 100}%`;
+                    }
+                    return '0%';
+                },
+                opponentHpHeight() {
+                    if(this.hp <= -1000) {
+                        finishGame("o");
+                    } else if (this.hp < 0) {
+                        return `${(-this.hp / 1000) * 100}%`;  // negatif puanı pozitife çeviriyoruz
+                    }
+                    return '0%';
+                }
             },
             methods: {
                 updateScore(newScore) {
                     this.score += newScore;
+                },
+                updateHP(newHP) {
+                    this.hp += newHP;
                 }
             }
         }).mount("#app");

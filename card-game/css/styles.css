@@ -351,6 +351,27 @@ a {
     text-align: center;
 }
 
+.all-hp {
+    margin: 10px 10px;
+    height: 25px;
+    border-radius: 15px;
+    width: (100% - 10px);
+    background: linear-gradient(to right, #83331200, rgba(0, 0, 0, 0.3), rgba(131, 52, 18, 0.2));
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.opponent-hp {
+    height: 100%;
+    background: linear-gradient(to right, rgba(131, 52, 18, 0.2), #833312FF);
+}
+
+.character-hp {
+    height: 100%;
+    background: linear-gradient(to right, #29493A, rgba(41, 73, 58, 0.2));
+}
+
 
 
 

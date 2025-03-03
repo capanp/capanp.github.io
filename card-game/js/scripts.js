@@ -48,6 +48,7 @@ function selectChoice(element) {
 
     if(choice == "**OYUNU AÇIKLA**") {
         showTutorial();
+        localStorage.setItem('tutorial', 1);
 
         $('.talk').css("display", "none");
 
@@ -125,6 +126,7 @@ function scoreCards() {
 
         let score = calculateScore(colors);
         app.score += score;
+        app.hp += score;
 
         console.log("Toplam Puan: " + score);
         
@@ -251,8 +253,9 @@ function botPlay() {
     console.log("Bot seçimi:", selectedCards);
 
     let botScoreGain = calculateScore(selectedCards);
+
     botScore += botScoreGain;
-    app.score -= botScoreGain; // Bot kazanırsa oyuncunun skorundan düş
+    app.hp -= botScoreGain; // Bot kazanırsa oyuncunun skorundan düş
 
     resetMainTable();
 
@@ -318,4 +321,50 @@ function calculateScore(colors) {
     }
 
     return score;
+}
+
+
+
+function finishGame(who) {
+    if (who == "c") {
+        $("body").append('<div id="ch-win-overlay">Kazandın...<br>Skor: ' + app.score + '<br>Tekrar Oynamak İçin Tıkla</div>');
+        $("#ch-win-overlay").css({
+            "position": "fixed",
+            "top": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "100%",
+            "background": "rgba(0, 0, 0, 0.7)",
+            "color": "white",
+            "font-size": "30px",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "z-index": "9999"
+        });
+
+        $("#bot-win-overlay").click(function() {
+            location.reload();
+        });
+    } else {
+        $("body").append('<div id="bot-win-overlay">Kaybettin...<br>Skor: ' + app.score + '<br>Tekrar Oynamak İçin Tıkla</div>');
+        $("#bot-win-overlay").css({
+            "position": "fixed",
+            "top": "0",
+            "left": "0",
+            "width": "100%",
+            "height": "100%",
+            "background": "rgba(0, 0, 0, 0.7)",
+            "color": "white",
+            "font-size": "30px",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "z-index": "9999"
+        });
+
+        $("#bot-win-overlay").click(function() {
+            location.reload();
+        });
+    }
 }
