@@ -23,6 +23,14 @@ a:hover {
     text-decoration-color: rgb(170, 170, 170);
 }
 
+.description {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.250);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
 .description p {
     text-align: justify;
 }
@@ -160,7 +168,6 @@ a:hover {
 .language-description {
     margin: 10px;
     font-size: 18px;
-
 }
 
 .languages {
