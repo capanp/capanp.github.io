@@ -1,10 +1,12 @@
 body, html {
     margin: 0;
     padding: 0;
+    min-width: 100%;
+    box-sizing: border-box;
 
     font-family: "Noto Sans", 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #141414, #0e0e0e);
-    background-color: #141414;
+    background: linear-gradient(to right, #111111, black);
+    background-color: #171717;
     color: rgb(170, 170, 170);
 }
 
@@ -28,7 +30,7 @@ a:hover {
     justify-content: right;
     align-items: center;
     width: 100%;
-    max-width: 720px;
+    max-width: 680px;
     margin: 40px auto 70px auto;
 }
 
@@ -67,8 +69,11 @@ a:hover {
 
 .wrap {
     margin: 0 auto;
+    padding: 20px;
     max-width: 720px;
     width: 100%;
+
+    box-sizing: border-box;
 }
 
 .header {
@@ -82,6 +87,8 @@ a:hover {
 
 .des-button-div {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .des-top-button {
@@ -89,7 +96,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 13px 35px;
-    margin: 10px 10px 10px 0;
     background-color: #1a67be;
     border: 0;
     color: #1d1d1d;
@@ -105,7 +111,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 10px 35px;
-    margin: 10px;
     border: 3px solid rgba(255, 255, 255, 0.250);
     background-color: transparent;
     border-radius: 5px;
@@ -115,27 +120,39 @@ a:hover {
     font-size: 20px;
 }
 
+.des-button:hover {
+    background-color: #862191;
+}
+
 .language-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     max-width: 1060px;
-    width: 100%;
     border-radius: 5px;
-    background: linear-gradient(to right, rgba(170,170,170), #888888);
-    background-color: rgba(170,170,170);
-    border-left: 2px solid #888888;
-    border-right: 2px solid #888888;
-    border-bottom: 2px solid #888888;
+    background: linear-gradient(to right, #333333, #111111);
+    background-color: #111111;
+    border-left: 2px solid #333333;
     overflow: hidden;
     margin-bottom: 50px;
+}
+
+.language-div::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #333333, #111111);
 }
 
 .language-description {
     margin:10px;
     font-size: 18px;
-    color: #1d1d1d;
+
 }
 
 .languages {
@@ -143,8 +160,8 @@ a:hover {
     padding: 10px;
     display: flex;
     justify-content: space-evenly;
-    background: linear-gradient(to right, #141414, #585858);
-    background-color: #888888;
+    background: linear-gradient(to right, #0c0c0c, #111111);
+    background-color: #111111;
 
     font-size: 12px;
 }
@@ -161,7 +178,7 @@ a:hover {
 .project-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 40px;
 }
 
 .card {
@@ -178,6 +195,25 @@ a:hover {
     user-select: none;
 }
 
+.footer-space a {
+    text-decoration: none;
+}
+
+.footer-icon {
+    fill: #666666;
+    transition: fill 0.2s ease;
+}
+
+.footer-icon:hover {
+    fill: rgb(170, 170, 170);
+}
+
 ::selection {
     background: #2c2c2c;
+}
+
+@media (max-width: 720px) {
+    .project-content {
+        gap: 20px;
+    }
 }
