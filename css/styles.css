@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     min-width: 100%;
@@ -8,6 +9,7 @@ body, html {
     background: linear-gradient(to right, #111111, black);
     background-color: #171717;
     color: rgb(170, 170, 170);
+    scroll-behavior: smooth;
 }
 
 a {
@@ -38,17 +40,17 @@ a:hover {
     display: flex;
 
     list-style-type: none;
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .navigator ul li {
-	font-size: 14px;
+    font-size: 14px;
     margin-right: 35px;
 }
 
 .navigator a {
-	color: rgb(200, 200, 200);
+    color: rgb(200, 200, 200);
     text-decoration: none;
     cursor: pointer;
 
@@ -56,11 +58,11 @@ a:hover {
 }
 
 .navigator a:link {
-	color: rgb(200, 200, 200);
+    color: rgb(200, 200, 200);
 }
 
 .navigator a:hover {
-	color: rgb(230, 230, 230);
+    color: rgb(230, 230, 230);
     text-decoration: none;
     cursor: pointer;
 
@@ -96,7 +98,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 13px 35px;
-    background-color: #1a67be;
+    background-color: rgb(200, 200, 200);
     border: 0;
     color: #1d1d1d;
     border-radius: 5px;
@@ -120,8 +122,14 @@ a:hover {
     font-size: 20px;
 }
 
+.des-top-button:hover {
+    background-color: #1a67be;
+    transform: translateY(-2px);
+}
+
 .des-button:hover {
-    background-color: #862191;
+    border: 3px solid #862191;
+    transform: translateY(-2px);
 }
 
 .language-div {
@@ -150,7 +158,7 @@ a:hover {
 }
 
 .language-description {
-    margin:10px;
+    margin: 10px;
     font-size: 18px;
 
 }
@@ -169,6 +177,47 @@ a:hover {
 .languages svg {
     width: 36px;
     height: 36px;
+}
+
+.lan {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip normalde görünmez */
+.lan .tooltiptext {
+    opacity: 0;
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(230, 230, 230, 0.25);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    z-index: 1;
+    transform: translateX(-50%); /* Gerçekten ortalamak için */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Tooltip hover'da fade-in ile görünür */
+.lan:hover .tooltiptext {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tooltip üçgeni */
+.lan .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Üçgeni tooltip'in ortasında hizalar */
+    transform: translateX(-50%); /* Ortalamak için */
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgb(230, 230, 230, 0.25) transparent transparent transparent;
 }
 
 .project-div {
