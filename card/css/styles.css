@@ -15,6 +15,10 @@ body {
   gap: 20px;
 }
 
+.card-con {
+  perspective: 600px;
+}
+
 .mccard {
   background-color: transparent;
   height: 200px;
@@ -22,6 +26,10 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+
+  transition: transform 0.2s ease-out; /* Animasyon süresi biraz artırıldı */
+  transform-style: preserve-3d;
+  will-change: transform; /* GPU hızlandırması için */
 }
 
 .topimage {

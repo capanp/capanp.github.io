@@ -1,4 +1,0 @@
-- to do
-    !! önemliler
-    % steam mağaza öğeleri
-    % arama yerini düzelt
